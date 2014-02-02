@@ -1,7 +1,11 @@
 .fridge
+  p.control = link_to 'Edit', edit_fridge_path(@fridge)
   h3 = @fridge.name
-  p = link_to 'Edit', edit_fridge_path(@fridge)
   ul.foods
+    li
+      p.control = link_to 'New', new_fridge_food_path(@fridge)
+      h4.name = 'New food'
+      p.limit Limit: 0
     - @fridge.foods.each do |food|
       li
         p.control = link_to 'Edit', edit_fridge_food_path(@fridge, food)
