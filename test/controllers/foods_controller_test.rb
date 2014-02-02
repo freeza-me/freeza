@@ -19,7 +19,7 @@ class FoodsControllerTest < ActionController::TestCase
 
   def test_create
     assert_difference('Food.count') do
-      post :create, food: {  }
+      post :create, food: attributes_for(:food)
     end
 
     assert_redirected_to food_path(assigns(:food))
@@ -36,7 +36,7 @@ class FoodsControllerTest < ActionController::TestCase
   end
 
   def test_update
-    put :update, id: @food, food: {  }
+    put :update, id: @food, food: attributes_for(:food)
     assert_redirected_to food_path(assigns(:food))
   end
 
