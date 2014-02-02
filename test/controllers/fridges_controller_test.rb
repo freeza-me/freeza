@@ -3,7 +3,8 @@ require "test_helper"
 class FridgesControllerTest < ActionController::TestCase
 
   before do
-    @fridge = fridges(:one)
+    sign_in @user = create(:user)
+    @fridge = create(:fridge, user_id: @user.id)
   end
 
   def test_index
@@ -19,7 +20,7 @@ class FridgesControllerTest < ActionController::TestCase
 
   def test_create
     assert_difference('Fridge.count') do
-      post :create, fridge: {  }
+      post :create, fridge: attributes_for(:fridge)
     end
 
     assert_redirected_to fridge_path(assigns(:fridge))
@@ -36,7 +37,7 @@ class FridgesControllerTest < ActionController::TestCase
   end
 
   def test_update
-    put :update, id: @fridge, fridge: {  }
+    put :update, id: @fridge, fridge: attributes_for(:fridge)
     assert_redirected_to fridge_path(assigns(:fridge))
   end
 

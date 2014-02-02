@@ -12,10 +12,14 @@ require 'database_cleaner'
 # Uncomment for awesome colorful output
 # require "minitest/pride"
 
+DatabaseCleaner.strategy = :truncation
+
+class ActionController::TestCase
+  include Devise::TestHelpers
+end
+
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
-
-  DatabaseCleaner.strategy = :transaction
 
   before :each do
     DatabaseCleaner.start
