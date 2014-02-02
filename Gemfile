@@ -39,17 +39,22 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
+gem 'unicorn-rails'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
+group :development do
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+  # Quiet Assets Log
+  gem 'quiet_assets', '~> 1.0.2'
+
+  # Guard
+  gem 'ruby_gntp'
+  gem 'guard'
+  gem 'guard-unicorn', github: 'closer/guard-unicorn'
+  gem 'guard-livereload'
+  gem 'guard-minitest'
+end
 
 group :development, :test do
 

@@ -5,10 +5,15 @@ require "test_helper"
 
 class RouteTest < ActionDispatch::IntegrationTest
   def test_root
-    assert_routing "/", class: "home", action: "show"
+    assert_routing "/", controller: "home", action: "show"
   end
 
   def test_foods
-    assert_routing "/foods", class: "foods", action: "index"
+    food = create(:food)
+
+    assert_routing "/foods",     controller: "foods", action: "index"
+    assert_routing "/foods/new", controller: "foods", action: "new"
+    assert_routing "/foods/#{food.id}", controller: "foods", action: "show", id: food.id.to_s
+    assert_routing "/foods/#{food.id}/edit", controller: "foods", action: "edit", id: food.id.to_s
   end
 end
