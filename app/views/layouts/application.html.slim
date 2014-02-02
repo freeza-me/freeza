@@ -8,6 +8,7 @@ head
 body
 
   .container
+    p = link_to 'Freeza', root_path
     - if current_user
       p
         = link_to 'sign out', destroy_user_session_path, method: :delete

@@ -1,10 +1,12 @@
 class FridgesController < ApplicationController
+  before_action :authenticate_user!
+
   before_action :set_fridge, only: [:show, :edit, :update, :destroy]
 
   # GET /fridges
   # GET /fridges.json
   def index
-    @fridges = Fridge.all
+    @fridges = current_user.fridges
   end
 
   # GET /fridges/1
@@ -14,7 +16,7 @@ class FridgesController < ApplicationController
 
   # GET /fridges/new
   def new
-    @fridge = Fridge.new
+    @fridge = current_user.fridges.new
   end
 
   # GET /fridges/1/edit
@@ -24,7 +26,7 @@ class FridgesController < ApplicationController
   # POST /fridges
   # POST /fridges.json
   def create
-    @fridge = Fridge.new(fridge_params)
+    @fridge = current_user.fridges.new(fridge_params)
 
     respond_to do |format|
       if @fridge.save
@@ -64,11 +66,11 @@ class FridgesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_fridge
-      @fridge = Fridge.find(params[:id])
+      @fridge = current_user.fridges.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fridge_params
-      params.require(:fridge).permit(:name, :user_id)
+      params.require(:fridge).permit(:name)
     end
 end
