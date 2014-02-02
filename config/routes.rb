@@ -9,6 +9,6 @@ Freeza::Application.routes.draw do
   end
 
   resources :fridges do
-    resources :foods
+    resources :foods, only: [:new, :create, :edit, :update, :destroy]
   end
 end

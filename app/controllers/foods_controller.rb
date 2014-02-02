@@ -2,18 +2,7 @@ class FoodsController < ApplicationController
   before_action :authenticate_user!
 
   before_action :set_fridge
-  before_action :set_food, only: [:show, :edit, :update, :destroy]
-
-  # GET /foods
-  # GET /foods.json
-  def index
-    @foods = @fridge.foods
-  end
-
-  # GET /foods/1
-  # GET /foods/1.json
-  def show
-  end
+  before_action :set_food, only: [:edit, :update, :destroy]
 
   # GET /foods/new
   def new
@@ -31,8 +20,8 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to [@fridge, @food], notice: 'Food was successfully created.' }
-        format.json { render action: 'show', status: :created, location: [@fridge, @food] }
+        format.html { redirect_to @fridge, notice: 'Food was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @fridge }
       else
         format.html { render action: 'new' }
         format.json { render json: @food.errors, status: :unprocessable_entity }
@@ -45,7 +34,7 @@ class FoodsController < ApplicationController
   def update
     respond_to do |format|
       if @food.update(food_params)
-        format.html { redirect_to [@fridge, @food], notice: 'Food was successfully updated.' }
+        format.html { redirect_to @fridge, notice: 'Food was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -59,7 +48,7 @@ class FoodsController < ApplicationController
   def destroy
     @food.destroy
     respond_to do |format|
-      format.html { redirect_to fridge_foods_url }
+      format.html { redirect_to fridge_url }
       format.json { head :no_content }
     end
   end

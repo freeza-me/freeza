@@ -1,12 +1,10 @@
-p#notice = notice
+.fridge
+  h3 = @fridge.name
+  p = link_to 'Edit', edit_fridge_path(@fridge)
+  ul.foods
+    - @fridge.foods.each do |food|
+      li
+        p.control = link_to 'Edit', edit_fridge_food_path(@fridge, food)
+        h4.name = food.name
+        p.limit = "Limit: #{food.limit}"
 
-p
-  strong Name:
-  = @fridge.name
-p
-  strong User:
-  = @fridge.user
-
-= link_to 'Edit', edit_fridge_path(@fridge)
-'|
-= link_to 'Back', fridges_path

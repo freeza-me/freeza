@@ -40,4 +40,7 @@ body {
   &.kitchen {
     @import "kitchen";
   }
+  &.fridges {
+    @import "fridges";
+  }
 }

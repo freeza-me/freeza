@@ -23,14 +23,8 @@ class RouteTest < ActionDispatch::IntegrationTest
     fridge = create(:fridge, user_id: user.id)
     food = create(:food, fridge_id: fridge.id)
 
-    assert_routing "/fridges/#{fridge.id}/foods",
-      fridge_id: fridge.id.to_s, controller: "foods", action: "index"
-
     assert_routing "/fridges/#{fridge.id}/foods/new",
       fridge_id: fridge.id.to_s, controller: "foods", action: "new"
-
-    assert_routing "/fridges/#{fridge.id}/foods/#{food.id}",
-      fridge_id: fridge.id.to_s, controller: "foods", action: "show", id: food.id.to_s
 
     assert_routing "/fridges/#{fridge.id}/foods/#{food.id}/edit",
       fridge_id: fridge.id.to_s, controller: "foods", action: "edit", id: food.id.to_s
