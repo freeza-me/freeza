@@ -1,0 +1,16 @@
+box: wercker/ruby
+services:
+  - wercker/mysql
+build:
+  steps:
+    - bundle-install
+    - rails-database-yml
+    - script:
+        name: minitest
+        code: bundle exec rake
+  # after-steps:
+  #   - wouter/irc-notify:
+  #       server: irc.freenode.net
+  #       port: 6667
+  #       nickname:
+  #       channel:
