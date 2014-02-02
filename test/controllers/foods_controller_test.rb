@@ -3,7 +3,7 @@ require "test_helper"
 class FoodsControllerTest < ActionController::TestCase
 
   before do
-    @food = foods(:one)
+    @food = create(:food)
   end
 
   def test_index
