@@ -4,9 +4,9 @@ require "test_helper"
 #   MiniTest::Rails::Testing.default_tasks << "routes"
 
 class RouteTest < ActionDispatch::IntegrationTest
-  # def test_root
-  #   assert_routing "/", class: "home", action: "show"
-  # end
+  def test_root
+    assert_routing "/", class: "home", action: "show"
+  end
 
   def test_foods
     assert_routing "/foods", class: "foods", action: "index"
