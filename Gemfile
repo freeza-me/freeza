@@ -12,6 +12,11 @@ gem 'asset_sync'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# A lightweight semantic grid framework for Sass and Bourbon
+gem 'bourbon'
+gem 'bitters'
+gem 'neat'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
