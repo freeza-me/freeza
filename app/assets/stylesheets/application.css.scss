@@ -31,6 +31,9 @@ header {
 }
 
 body {
+  .app {
+    padding: $base-line-height 0;
+  }
   &.home {
     @import "home";
   }

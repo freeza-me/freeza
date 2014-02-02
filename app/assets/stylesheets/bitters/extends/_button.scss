@@ -1,4 +1,15 @@
 %button {
-  @include button(simple, $base-accent-color);
+  @include box-sizing(border-box);
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: $blue;
+  border: none;
+  color: $white;
+  border-radius: $base-border-radius;
+  padding: $base-line-height / 2;
   font-size: $base-font-size;
+  &.hover {
+    background: lighten($blue, 60);
+  }
 }

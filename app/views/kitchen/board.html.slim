@@ -1,8 +1,9 @@
 .container
   - current_user.fridges.each do |fridge|
-    h3 = fridge.name
-    ul.foods
-      - fridge.foods.each do |food|
-        li
-          h4.name = food.name
-          p.limit = "Limit: #{food.limit}"
+    .fridge
+      h3 = fridge.name
+      ul.foods
+        - fridge.foods.each do |food|
+          li
+            h4.name = food.name
+            p.limit = "Limit: #{food.limit}"
