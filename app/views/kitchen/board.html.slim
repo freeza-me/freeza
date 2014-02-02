@@ -1,7 +1,8 @@
 .container
-  h1 Kitchen#board
   - current_user.fridges.each do |fridge|
-    h2 = fridge.name
-    ul
+    h3 = fridge.name
+    ul.foods
       - fridge.foods.each do |food|
-        li = food.name
+        li
+          h4.name = food.name
+          p.limit = "Limit: #{food.limit}"

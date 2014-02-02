@@ -1,3 +1,23 @@
-// Place all the styles related to the kitchen controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  ul.foods {
+    li {
+      @include span-columns(4 of 12);
+      background: $olive;
+      height: 120px;
+      padding: $base-line-height / 2;
+      .name {
+        padding: 0 0 0.5em 0;
+        margin-bottom: 0.5em;
+        font-size: $base-font-size * 1.5;
+        font-weight: bold;
+        color: $white;
+        border-bottom: 1px solid $white;
+      }
+      .limit {
+        font-size: $base-font-size * 2.5;
+        font-weight: bold;
+        color: lighten($olive, 15);
+      }
+    }
+  }
+}

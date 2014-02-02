@@ -1,6 +1,6 @@
 @mixin flash($color) {
   background: $color;
-  color: darken($color, 60);
+  color: lighten($color, 60);
   font-weight: bold;
   font-size: $base-font-size * 0.8;
   padding: $base-line-height / 2;
@@ -12,10 +12,10 @@
     cursor: pointer;
   }
   a {
-    color: darken($color, 70);
+    color: lighten($color, 70);
 
     &:hover {
-      color: darken($color, 90);
+      color: lighten($color, 90);
     }
   }
 }

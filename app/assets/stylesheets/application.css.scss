@@ -34,4 +34,7 @@ body {
   &.home {
     @import "home";
   }
+  &.kitchen {
+    @import "kitchen";
+  }
 }
