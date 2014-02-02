@@ -15,16 +15,17 @@ $base-border-radius: em(3);
 // Colors
 ///////////////////////////////////////////////////////////////////////////////
 
-$blue: #477DCA;
-$dark-gray: #333;
-$medium-gray: #999;
-$light-gray: #DDD;
+@import "colors/colors";
+
+$dark-gray: $black;
+$medium-gray: $gray;
+$light-gray: $silver;
 $light-red: #FBE3E4;
 $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
 
 // Body Color
-$base-body-color: white;
+$base-body-color: $white;
 
 //  Font Colors
 $base-font-color: $dark-gray;

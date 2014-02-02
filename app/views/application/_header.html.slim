@@ -1,12 +1,3 @@
-- if notice
-  .notice
-    p.close x
-    p = notice
-- if alert
-  .alert
-    p.close x
-    p = alert
-
 header
 
   .container
@@ -19,3 +10,14 @@ header
         li = link_to 'sign in', new_user_session_path
 
     p.logo = link_to 'Freeza', root_path
+
+- if notice
+  .notice
+    p.close x
+    p = notice
+- if alert
+  .alert
+    p.close x
+    p = alert
+
+
