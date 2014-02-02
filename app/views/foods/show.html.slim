@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @food.name
+p
+  strong Deadline:
+  = @food.deadline
+
+= link_to 'Edit', edit_food_path(@food)
+'|
+= link_to 'Back', foods_path
