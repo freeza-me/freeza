@@ -1,22 +1,21 @@
-.container
-  h1 Listing foods
+h1 Listing foods
 
-  table
+table
+  tr
+    th Name
+    th Deadline
+    th
+    th
+    th
+
+  - @foods.each do |food|
     tr
-      th Name
-      th Deadline
-      th
-      th
-      th
+      td = food.name
+      td = food.deadline
+      td = link_to 'Show', [@fridge, food]
+      td = link_to 'Edit', edit_fridge_food_path(@fridge, food)
+      td = link_to 'Destroy', [@fridge, food], data: {:confirm => 'Are you sure?'}, :method => :delete
 
-    - @foods.each do |food|
-      tr
-        td = food.name
-        td = food.deadline
-        td = link_to 'Show', [@fridge, food]
-        td = link_to 'Edit', edit_fridge_food_path(@fridge, food)
-        td = link_to 'Destroy', [@fridge, food], data: {:confirm => 'Are you sure?'}, :method => :delete
+br
 
-  br
-
-  = link_to 'New Food', new_fridge_food_path(@fridge)
+= link_to 'New Food', new_fridge_food_path(@fridge)
