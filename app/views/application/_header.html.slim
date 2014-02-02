@@ -1,0 +1,21 @@
+- if notice
+  .notice
+    p.close x
+    p = notice
+- if alert
+  .alert
+    p.close x
+    p = alert
+
+header
+
+  .container
+
+    ul.control
+      - if current_user
+        li = link_to 'sign out', destroy_user_session_path, method: :delete
+      - else
+        li = link_to 'sign up', new_user_registration_path
+        li = link_to 'sign in', new_user_session_path
+
+    p.logo = link_to 'Freeza', root_path

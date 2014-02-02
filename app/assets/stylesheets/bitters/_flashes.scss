@@ -6,6 +6,10 @@
   @include flash($notice-color);
 }
 
+.alert, #flash_alert {
+  @include flash($error-color);
+}
+
 .success, #flash_success {
   @include flash($success-color);
 }
