@@ -1,10 +1,13 @@
 class FoodsController < ApplicationController
+  before_action :authenticate_user!
+
+  before_action :set_fridge
   before_action :set_food, only: [:show, :edit, :update, :destroy]
 
   # GET /foods
   # GET /foods.json
   def index
-    @foods = Food.all
+    @foods = @fridge.foods
   end
 
   # GET /foods/1
@@ -14,7 +17,7 @@ class FoodsController < ApplicationController
 
   # GET /foods/new
   def new
-    @food = Food.new
+    @food = @fridge.foods.new
   end
 
   # GET /foods/1/edit
@@ -24,12 +27,12 @@ class FoodsController < ApplicationController
   # POST /foods
   # POST /foods.json
   def create
-    @food = Food.new(food_params)
+    @food = @fridge.foods.new(food_params)
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to @food, notice: 'Food was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @food }
+        format.html { redirect_to [@fridge, @food], notice: 'Food was successfully created.' }
+        format.json { render action: 'show', status: :created, location: [@fridge, @food] }
       else
         format.html { render action: 'new' }
         format.json { render json: @food.errors, status: :unprocessable_entity }
@@ -42,7 +45,7 @@ class FoodsController < ApplicationController
   def update
     respond_to do |format|
       if @food.update(food_params)
-        format.html { redirect_to @food, notice: 'Food was successfully updated.' }
+        format.html { redirect_to [@fridge, @food], notice: 'Food was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -56,15 +59,20 @@ class FoodsController < ApplicationController
   def destroy
     @food.destroy
     respond_to do |format|
-      format.html { redirect_to foods_url }
+      format.html { redirect_to fridge_foods_url }
       format.json { head :no_content }
     end
   end
 
   private
+
+    def set_fridge
+      @fridge = current_user.fridges.find(params[:fridge_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_food
-      @food = Food.find(params[:id])
+      @food = @fridge.foods.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

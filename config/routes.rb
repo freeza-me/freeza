@@ -1,7 +1,8 @@
 Freeza::Application.routes.draw do
-  resources :fridges
 
   devise_for :users
   root "home#show"
-  resources :foods
+  resources :fridges do
+    resources :foods
+  end
 end

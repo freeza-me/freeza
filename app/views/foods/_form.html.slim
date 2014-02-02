@@ -1,4 +1,4 @@
-= form_for @food do |f|
+= form_for [@fridge, @food] do |f|
   - if @food.errors.any?
     #error_explanation
       h2 = "#{pluralize(@food.errors.count, "error")} prohibited this food from being saved:"

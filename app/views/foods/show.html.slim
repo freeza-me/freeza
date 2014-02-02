@@ -8,6 +8,6 @@
     strong Deadline:
     = @food.deadline
 
-  = link_to 'Edit', edit_food_path(@food)
+  = link_to 'Edit', edit_fridge_food_path(@fridge, @food)
   '|
-  = link_to 'Back', foods_path
+  = link_to 'Back', fridge_foods_path

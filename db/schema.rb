@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202141815) do
+ActiveRecord::Schema.define(version: 20140202144507) do
 
   create_table "foods", force: true do |t|
     t.string   "name"
     t.date     "deadline"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "fridge_id"
   end
+
+  add_index "foods", ["fridge_id"], name: "index_foods_on_fridge_id", using: :btree
 
   create_table "fridges", force: true do |t|
     t.string   "name"
