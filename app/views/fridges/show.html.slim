@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @fridge.name
+p
+  strong User:
+  = @fridge.user
+
+= link_to 'Edit', edit_fridge_path(@fridge)
+'|
+= link_to 'Back', fridges_path

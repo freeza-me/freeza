@@ -44,6 +44,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# User authorization
+gem 'devise'
+
 # Use unicorn as the app server
 gem 'unicorn'
 gem 'unicorn-rails'

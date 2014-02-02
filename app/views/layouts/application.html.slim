@@ -7,4 +7,20 @@ head
   = csrf_meta_tags
 body
 
-= yield
+  .container
+    - if current_user
+      p
+        = link_to 'sign out', destroy_user_session_path, method: :delete
+    - else
+      p
+        = link_to 'sign up', new_user_registration_path
+        '|
+        = link_to 'sign in', new_user_session_path
+
+  .container
+    - if notice
+      p.notice = notice
+    - if alert
+      p.alert = alert
+
+  = yield

@@ -1,0 +1,21 @@
+h1 Listing fridges
+
+table
+  tr
+    th Name
+    th User
+    th
+    th
+    th
+
+  - @fridges.each do |fridge|
+    tr
+      td = fridge.name
+      td = fridge.user
+      td = link_to 'Show', fridge
+      td = link_to 'Edit', edit_fridge_path(fridge)
+      td = link_to 'Destroy', fridge, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Fridge', new_fridge_path

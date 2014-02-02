@@ -47,6 +47,7 @@ GEM
       fog (>= 1.8.0)
     atomic (1.1.14)
     awesome_print (1.2.0)
+    bcrypt-ruby (3.1.2)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -81,6 +82,12 @@ GEM
     database_cleaner (1.2.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
+    devise (3.2.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     em-websocket (0.5.0)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.5.3)
@@ -165,6 +172,7 @@ GEM
     net-ssh (2.7.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    orm_adapter (0.5.0)
     polyglot (0.3.3)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -271,6 +279,8 @@ GEM
     unicorn-rails (1.1.0)
       rack
       unicorn
+    warden (1.2.3)
+      rack (>= 1.0)
     webmock (1.17.1)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
@@ -293,6 +303,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   colorize_unpermitted_parameters
   database_cleaner
+  devise
   factory_girl_rails (~> 4.0)
   guard
   guard-livereload
