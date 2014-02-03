@@ -6,12 +6,9 @@ header
       - if current_user
         li = link_to 'sign out', destroy_user_session_path, method: :delete
       - else
-        li = link_to 'sign up', new_user_registration_path
         li = link_to 'sign in', new_user_session_path
 
     div.logo = link_to 'Freeza', root_path
 
-- if notice
-  = render 'flash', type: 'notice', message: notice
-- if alert
-  = render 'flash', type: 'alert', message: alert
+- flash.each do |type, message|
+  = render 'flash', type: type, message: message
