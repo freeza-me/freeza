@@ -1,14 +1,13 @@
 .fridge
-  p.control = link_to 'Edit', edit_fridge_path(@fridge)
   h3 = @fridge.name
-  ul.foods
-    li
-      p.control = link_to 'New', new_fridge_food_path(@fridge)
-      h4.name = 'New food'
-      p.limit Limit: 0
+  p.control
+    span.button = link_to 'Edit fridge', edit_fridge_path(@fridge)
+    '  /
+    span.button = link_to 'New food', new_fridge_food_path(@fridge)
+  .foods
     - @fridge.foods.each do |food|
-      li
+      .food
         p.control = link_to 'Edit', edit_fridge_food_path(@fridge, food)
         h4.name = food.name
-        p.limit = "Limit: #{food.limit}"
+        p.limit class="#{food.limit < 0 ? "out" : "safe"}" = "Limit: #{food.limit}"
 

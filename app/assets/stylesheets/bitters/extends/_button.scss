@@ -1,13 +1,12 @@
 %button {
   @include box-sizing(border-box);
-  display: block;
-  width: 100%;
   text-align: center;
-  background: $blue;
   border: none;
-  color: $white;
+  background: inherit;
+  border: 1px solid $base-border-color;
   border-radius: $base-border-radius;
-  padding: $base-line-height / 2;
+  padding: ($base-line-height / 3) ($base-font-size * 0.8);
+  color: $base-font-color;
   font-size: $base-font-size;
   &.hover {
     background: lighten($blue, 60);

@@ -1,21 +1,23 @@
 @mixin flash($color) {
-  background: $color;
   color: lighten($color, 60);
   font-weight: bold;
-  font-size: $base-font-size * 0.8;
+  background: $color;
   padding: $base-line-height / 2;
   p {
     margin: 0;
+    padding: 0;
   }
-  .close {
-    float: right;
-    cursor: pointer;
-  }
-  a {
-    color: lighten($color, 70);
+  .container {
+    .close {
+      float: right;
+      cursor: pointer;
+    }
+    a {
+      color: lighten($color, 70);
 
-    &:hover {
-      color: lighten($color, 90);
+      &:hover {
+        color: lighten($color, 90);
+      }
     }
   }
 }

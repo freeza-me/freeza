@@ -2,12 +2,10 @@
   .fridge {
     h3 {
       margin-bottom: $base-line-height / 2;
-      border-bottom: 1px solid $gray;
+      border-bottom: 1px solid $base-border-color;
     }
-    ul.foods {
-      li {
-        @include span-columns(4 of 12);
-        @include omega(3);
+    .foods {
+      .food {
         background: $olive;
         height: 120px;
         padding: $base-line-height / 2;
@@ -15,7 +13,9 @@
         .control {
           float: right;
           a {
+            @extend %button;
             color: $white;
+            border-color: $white;
           }
         }
         .name {
@@ -30,6 +30,9 @@
           font-size: $base-font-size * 2.5;
           font-weight: bold;
           color: lighten($olive, 15);
+          &.out {
+            color: $black;
+          }
         }
       }
     }

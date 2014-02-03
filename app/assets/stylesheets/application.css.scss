@@ -7,26 +7,50 @@ html, body {
   padding: 0;
 }
 
+body {
+  background: $base-body-color;
+}
+
 .container {
   @include outer-container;
 }
 
 header {
   padding: 10px 0;
-  border-bottom: 1px solid $dark-gray;
+  border-bottom: 1px solid $base-border-color;
   .logo {
     font-size: 1.5em;
     font-weight: bold;
+    line-height: 30px;
     a {
-      color: $dark-gray;
+      color: $base-font-color;
     }
   }
   .control {
+    padding: 0;
+    margin: 0;
     float: right;
+    line-height: 30px;
     li {
       display: inline;
       margin-left: 1.0em;
+      a {
+        @extend %button;
+      }
     }
+  }
+}
+
+span.button a {
+  @include box-sizing(border-box);
+  text-align: center;
+  background: $base-accent-color;
+  border: none;
+  color: $white;
+  border-radius: $base-border-radius;
+  padding: $base-line-height / 4;
+  &.hover {
+    background: lighten($blue, 60);
   }
 }
 

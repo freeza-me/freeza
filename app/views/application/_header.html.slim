@@ -9,15 +9,9 @@ header
         li = link_to 'sign up', new_user_registration_path
         li = link_to 'sign in', new_user_session_path
 
-    p.logo = link_to 'Freeza', root_path
+    div.logo = link_to 'Freeza', root_path
 
 - if notice
-  .notice
-    p.close x
-    p = notice
+  = render 'flash', type: 'notice', message: notice
 - if alert
-  .alert
-    p.close x
-    p = alert
-
-
+  = render 'flash', type: 'alert', message: alert
