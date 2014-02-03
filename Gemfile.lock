@@ -239,6 +239,8 @@ GEM
     redis-store (1.1.4)
       redis (>= 2.2)
     ref (1.0.5)
+    rollbar (0.12.9)
+      multi_json (~> 1.3)
     ruby-hmac (0.4.0)
     ruby_gntp (0.3.4)
     safe_yaml (0.9.7)
@@ -351,6 +353,7 @@ DEPENDENCIES
   rails (= 4.0.2)
   redis-rack-cache
   redis-rails
+  rollbar
   ruby_gntp
   sass-rails (~> 4.0.0)
   sdoc

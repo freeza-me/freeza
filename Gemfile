@@ -54,6 +54,9 @@ end
 # User authorization
 gem 'devise'
 
+# Use Expression monitoring
+gem 'rollbar'
+
 # Use unicorn as the app server
 gem 'unicorn'
 gem 'unicorn-rails'
