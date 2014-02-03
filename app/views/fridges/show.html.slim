@@ -1,9 +1,9 @@
 .fridge
   h3 = @fridge.name
   p.control
-    span.button = link_to 'Edit fridge', edit_fridge_path(@fridge)
+    = link_to 'Edit fridge', edit_fridge_path(@fridge)
     '  /
-    span.button = link_to 'New food', new_fridge_food_path(@fridge)
+    = link_to 'New food', new_fridge_food_path(@fridge)
   .foods
     - @fridge.foods.each do |food|
       .food

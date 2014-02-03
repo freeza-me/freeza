@@ -45,23 +45,7 @@ header {
   }
 }
 
-span.button a {
-  @include box-sizing(border-box);
-  text-align: center;
-  background: $base-accent-color;
-  border: none;
-  color: $white;
-  border-radius: $base-border-radius;
-  padding: $base-line-height / 4;
-  &.hover {
-    background: lighten($blue, 60);
-  }
-}
-
 body {
-  .app {
-    padding: $base-line-height 0;
-  }
   &.home {
     @import "home";
   }

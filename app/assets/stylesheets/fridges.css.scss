@@ -6,7 +6,7 @@
     }
     .foods {
       .food {
-        background: $olive;
+        background: $teal;
         height: 120px;
         padding: $base-line-height / 2;
         margin-bottom: $base-line-height;
@@ -29,9 +29,9 @@
         .limit {
           font-size: $base-font-size * 2.5;
           font-weight: bold;
-          color: lighten($olive, 15);
+          color: lighten($teal, 15);
           &.out {
-            color: $black;
+            color: $white;
           }
         }
       }

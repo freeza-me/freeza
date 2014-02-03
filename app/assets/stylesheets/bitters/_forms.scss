@@ -9,6 +9,10 @@ $form-font-family: $base-font-family;
 
 $form-error-color: $red;
 
+form {
+  margin-bottom: $base-line-height;
+}
+
 fieldset {
   background: lighten($base-border-color, 10);
   border: 1px solid $base-border-color;
@@ -76,19 +80,36 @@ input[type="file"] {
 }
 
 select {
+  @include appearance(none);
   width: auto;
   margin-bottom: $base-line-height;
+  @include box-sizing(border-box);
+  @include transition(border-color);
+  background-color: white;
+  border-radius: $form-border-radius;
+  border: 1px solid $form-border-color;
+  box-shadow: $form-box-shadow;
+  font-family: $form-font-family;
+  font-size: $form-font-size;
+  margin-bottom: $base-line-height / 2;
+  padding: ($base-line-height / 3) ($base-line-height / 3);
+  resize: vertical;
 }
 
 button,
 input[type="submit"] {
   @extend %button;
   @include appearance(none);
-  border: 2px solid $teal;
+  border: 2px solid $dark-gray;
   cursor: pointer;
+  font-weight: bold;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+}
+
+.actions {
+  padding: ($base-line-height / 2) 0;
 }
 
 #error_explanation {
