@@ -27,5 +27,11 @@ module Freeza
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    ENV['REDIS_HOST'] ||= ENV['BOXEN_REDIS_HOST'] || 'localhost'
+    ENV['REDIS_PORT'] ||= ENV['BOXEN_REDIS_PORT'] || '6379'
+    ENV['REDIS_URL'] ||= "redis://#{ENV['REDIS_HOST'] || 'localhost'}:#{ENV['REDIS_PORT'] || 6379}"
+
+    config.cache_store = :redis_store, "#{ENV['REDIS_URL']}/0/cache", { expires_in: 90.minutes }
   end
 end
