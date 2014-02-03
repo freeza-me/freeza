@@ -21,7 +21,6 @@
 }
 
 .how_to_use {
-  padding-top: $base-line-height;
   .case {
     @include box-sizing(border-box);
     @include span-columns(4);
@@ -31,7 +30,7 @@
     }
     box-shadow: 0px 0px 10px rgba($medium-gray, 0.25);
     height: 300px;
-    margin-bottom: $base-line-height / 2;
+    margin-bottom: $base-line-height;
     padding: $base-line-height / 2;
     background: $white;
     text-align: center;

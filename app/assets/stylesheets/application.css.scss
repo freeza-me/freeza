@@ -13,10 +13,13 @@ body {
 
 .container {
   @include outer-container;
+  padding: $base-line-height 0;
+  @include media($large-screen) {
+    padding: $base-line-height;
+  }
 }
 
 header {
-  padding: 10px 0;
   border-bottom: 1px solid $base-border-color;
   .logo {
     font-size: 1.5em;
@@ -70,9 +73,7 @@ body {
 }
 
 footer {
-  margin-top: $base-line-height;
   .container {
-    padding-top: $base-line-height;
     border-top: 1px solid $base-border-color;
   }
 }

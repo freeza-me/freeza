@@ -14,15 +14,14 @@ fieldset {
   padding: $base-line-height;
 }
 
-input,
-label,
-select {
+input {
   display: block;
   font-family: $form-font-family;
   font-size: $form-font-size;
 }
 
 label {
+  display: block;
   font-weight: bold;
   margin-bottom: $base-line-height / 4;
 
