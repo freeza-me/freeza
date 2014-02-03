@@ -1,16 +1,14 @@
-p.control
-  = link_to 'New fridge', new_fridge_path
-
 - current_user.fridges.each do |fridge|
   .fridge
-    h3 = fridge.name
     p.control
       = link_to 'Edit fridge', edit_fridge_path(fridge)
       '  /
       = link_to 'New food', new_fridge_food_path(fridge)
-    .foods
-      - fridge.foods.each do |food|
-        .food
-          p.control = link_to 'Edit', edit_fridge_food_path(fridge, food)
-          h4.name = food.name
-          p.limit class="#{food.limit < 0 ? "out" : "safe"}" = "Limit: #{food.limit}"
+    h3 = fridge.name
+    - fridge.foods.each do |food|
+      .food class="#{food.status}"
+        p.control
+          = link_to 'Edit', edit_fridge_food_path(fridge, food)
+          = link_to 'Delete', fridge_food_path(fridge, food), method: :delete
+        h4.name = food.name
+        p.limit = "Limit: #{food.limit}"

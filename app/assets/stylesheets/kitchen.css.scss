@@ -4,35 +4,49 @@
       margin-bottom: $base-line-height / 2;
       border-bottom: 1px solid $base-border-color;
     }
-    .foods {
-      .food {
-        background: $teal;
-        height: 120px;
-        padding: $base-line-height / 2;
-        margin-bottom: $base-line-height;
-        .control {
-          float: right;
-          a {
-            @extend %button;
-            color: $white;
-            border-color: $white;
-          }
-        }
-        .name {
-          padding: 0 0 0.5em 0;
-          margin-bottom: 0.5em;
-          font-size: $base-font-size * 1.5;
-          font-weight: bold;
+    .control {
+      float: right;
+    }
+    .food {
+      background: $teal;
+      height: 120px;
+      padding: $base-line-height / 2;
+      margin-bottom: $base-line-height;
+      .control {
+        font-size: $base-font-size * 0.7;
+        float: right;
+        a {
+          @extend %button;
           color: $white;
-          border-bottom: 1px solid $white;
+          border-color: $white;
+          margin-left: $base-line-height / 4;
         }
+      }
+      .name {
+        padding: 0 0 0.5em 0;
+        margin-bottom: 0.5em;
+        font-size: $base-font-size * 1.5;
+        font-weight: bold;
+        color: $white;
+        border-bottom: 1px solid $white;
+      }
+      .limit {
+        font-size: $base-font-size * 2.5;
+        font-weight: bold;
+        color: lighten($teal, 15);
+      }
+      &.dead {
+        background: $medium-gray;
+        color: $light-gray;
         .limit {
-          font-size: $base-font-size * 2.5;
-          font-weight: bold;
-          color: lighten($teal, 15);
-          &.out {
-            color: $white;
-          }
+          color: $light-gray;
+        }
+      }
+      &.shortly {
+        background: $red;
+        color: $white;
+        .limit {
+          color: $white;
         }
       }
     }
