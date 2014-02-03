@@ -20,8 +20,8 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to @fridge, notice: 'Food was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @fridge }
+        format.html { redirect_to kitchen_board_path, notice: 'Food was successfully created.' }
+        format.json { render action: 'show', status: :created, location: kitchen_board_path }
       else
         format.html { render action: 'new' }
         format.json { render json: @food.errors, status: :unprocessable_entity }
@@ -34,7 +34,7 @@ class FoodsController < ApplicationController
   def update
     respond_to do |format|
       if @food.update(food_params)
-        format.html { redirect_to @fridge, notice: 'Food was successfully updated.' }
+        format.html { redirect_to kitchen_board_path, notice: 'Food was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -48,7 +48,7 @@ class FoodsController < ApplicationController
   def destroy
     @food.destroy
     respond_to do |format|
-      format.html { redirect_to fridge_url }
+      format.html { redirect_to kitchen_board_path }
       format.json { head :no_content }
     end
   end

@@ -18,7 +18,7 @@ class FoodsControllerTest < ActionController::TestCase
       post :create, food: attributes_for(:food), fridge_id: @fridge.id
     end
 
-    assert_redirected_to fridge_path(@fridge)
+    assert_redirected_to kitchen_board_path
   end
 
   def test_edit
@@ -28,7 +28,7 @@ class FoodsControllerTest < ActionController::TestCase
 
   def test_update
     put :update, id: @food, food: attributes_for(:food), fridge_id: @fridge.id
-    assert_redirected_to fridge_path(@fridge)
+    assert_redirected_to kitchen_board_path
   end
 
   def test_destroy
@@ -36,6 +36,6 @@ class FoodsControllerTest < ActionController::TestCase
       delete :destroy, id: @food, fridge_id: @fridge.id
     end
 
-    assert_redirected_to fridge_path(@fridge)
+    assert_redirected_to kitchen_board_path
   end
 end

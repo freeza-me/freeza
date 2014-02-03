@@ -7,12 +7,6 @@ class FridgesControllerTest < ActionController::TestCase
     @fridge = create(:fridge, user_id: @user.id)
   end
 
-  def test_index
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:fridges)
-  end
-
   def test_new
     get :new
     assert_response :success
@@ -23,12 +17,7 @@ class FridgesControllerTest < ActionController::TestCase
       post :create, fridge: attributes_for(:fridge)
     end
 
-    assert_redirected_to fridge_path(assigns(:fridge))
-  end
-
-  def test_show
-    get :show, id: @fridge
-    assert_response :success
+    assert_redirected_to kitchen_board_path
   end
 
   def test_edit
@@ -38,7 +27,7 @@ class FridgesControllerTest < ActionController::TestCase
 
   def test_update
     put :update, id: @fridge, fridge: attributes_for(:fridge)
-    assert_redirected_to fridge_path(assigns(:fridge))
+    assert_redirected_to kitchen_board_path
   end
 
   def test_destroy
@@ -46,6 +35,6 @@ class FridgesControllerTest < ActionController::TestCase
       delete :destroy, id: @fridge
     end
 
-    assert_redirected_to fridges_path
+    assert_redirected_to kitchen_board_path
   end
 end

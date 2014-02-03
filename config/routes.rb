@@ -8,7 +8,7 @@ Freeza::Application.routes.draw do
     get "board"
   end
 
-  resources :fridges do
+  resources :fridges, only: [:new, :create, :edit, :update, :destroy] do
     resources :foods, only: [:new, :create, :edit, :update, :destroy]
   end
 end
