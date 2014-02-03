@@ -1,11 +1,13 @@
 $form-border-color: $base-border-color;
 $form-border-color-hover: darken($base-border-color, 10);
-$form-border-color-focus: $base-accent-color;
+$form-border-color-focus: $teal;
 $form-border-radius: $base-border-radius;
 $form-box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
 $form-font-size: $base-font-size;
 $form-font-family: $base-font-family;
+
+$form-error-color: $red;
 
 fieldset {
   background: lighten($base-border-color, 10);
@@ -82,8 +84,38 @@ button,
 input[type="submit"] {
   @extend %button;
   @include appearance(none);
+  border: 2px solid $teal;
   cursor: pointer;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
 }
+
+#error_explanation {
+  border: 4px solid $form-error-color;
+  padding: $base-line-height / 2;
+  margin: ($base-line-height / 2) 0;
+  background: $white;
+  h2 {
+    color: $form-error-color;
+    font-size: $base-font-size;
+    border-bottom: 1px solid $form-error-color;
+    margin-bottom: $base-line-height / 2;
+  }
+  ul {
+    li {
+    }
+  }
+}
+
+.field_with_errors {
+  label {
+    color: $form-error-color;
+  }
+  textarea,
+  #{$all-text-inputs} {
+    border-color: $form-error-color;
+  }
+}
+
+

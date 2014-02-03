@@ -9,6 +9,7 @@ html, body {
 
 body {
   background: $base-body-color;
+  color: $black;
 }
 
 .container {
@@ -75,5 +76,8 @@ body {
 footer {
   .container {
     border-top: 1px solid $base-border-color;
+    .copyright {
+      margin: 0;
+    }
   }
 }
