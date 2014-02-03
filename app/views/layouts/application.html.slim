@@ -1,15 +1,11 @@
 doctype html
 = render "hidden_message"
 html
-head
-  title Freeza
-  = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-  = javascript_include_tag "application", "data-turbolinks-track" => true
-  = csrf_meta_tags
-body class="#{controller_name}"
+  = render 'head'
+  body class="#{controller_name}"
 
-  = render 'header'
+    = render 'header'
 
-  .app
-    .container
-      = yield
+    .app
+      .container
+        = yield
