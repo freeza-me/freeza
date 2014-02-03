@@ -5,5 +5,9 @@ FactoryGirl.define do
     email 'test@example.com'
     password 'password'
     password_confirmation 'password'
+
+    after(:create) do |user|
+      user.confirm!
+    end
   end
 end
