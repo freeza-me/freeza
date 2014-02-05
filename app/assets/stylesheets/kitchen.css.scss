@@ -13,8 +13,12 @@
     margin-bottom: $base-line-height;
     .control {
       a {
+        font-weight: bold;
         color: $white;
         border-color: $white;
+        &.critical {
+          background: $red;
+        }
       }
     }
     .name {

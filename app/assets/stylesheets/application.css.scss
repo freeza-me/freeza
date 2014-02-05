@@ -54,6 +54,9 @@ body {
     margin-bottom: $base-line-height;
     a {
       margin-right: $base-line-height / 4;
+      &.critical {
+        color: $red;
+      }
     }
   }
 

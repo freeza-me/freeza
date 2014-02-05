@@ -10,6 +10,10 @@ en:
   heading:
     new: New %{model}
 
+  navigation:
+    back: Back
+    delete: Delete this %{model}.
+
   factory:
     fridge:
       name: Fridge

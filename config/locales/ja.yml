@@ -14,6 +14,10 @@ ja:
     new: 新しい%{model}の登録
     edit: "%{model}の編集"
 
+  navigation:
+    back: 戻る
+    delete: "この%{model}を削除する"
+
   factory:
     fridge:
       name: 冷蔵庫
