@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable, :lockable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :fridges
+  has_many :fridges, dependent: :destroy
   has_many :foods, through: :fridges
 end
