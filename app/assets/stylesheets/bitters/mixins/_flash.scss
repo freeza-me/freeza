@@ -2,7 +2,7 @@
   color: lighten($color, 60);
   font-weight: bold;
   background: $color;
-  padding: $base-line-height / 2;
+  padding: ($base-line-height / 2) 0;
   p {
     margin: 0;
     padding: 0;

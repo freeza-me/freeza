@@ -1,3 +1,9 @@
 en:
   lead: "For your information. I'll give you the number of my power level. It's 530,000."
   language: Language
+
+  activerecord:
+    flash:
+      created: "%{model} was successfully created."
+      updated: "%{model} was successfully updated."
+      deleted: "%{model} was successfully deleted."

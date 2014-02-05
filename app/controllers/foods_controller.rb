@@ -20,7 +20,7 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to kitchen_board_path, notice: 'Food was successfully created.' }
+        format.html { redirect_to kitchen_board_path, notice: t('activerecord.flash.created', model: @food.class.model_name.human) }
         format.json { render action: 'show', status: :created, location: kitchen_board_path }
       else
         format.html { render action: 'new' }
@@ -34,7 +34,7 @@ class FoodsController < ApplicationController
   def update
     respond_to do |format|
       if @food.update(food_params)
-        format.html { redirect_to kitchen_board_path, notice: 'Food was successfully updated.' }
+        format.html { redirect_to kitchen_board_path, notice: t('activerecord.flash.updated', model: @food.class.model_name.human) }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -48,7 +48,7 @@ class FoodsController < ApplicationController
   def destroy
     @food.destroy
     respond_to do |format|
-      format.html { redirect_to kitchen_board_path, notice: 'Food was successfully deleted.' }
+      format.html { redirect_to kitchen_board_path, notice: t('activerecord.flash.deleted', model: @food.class.model_name.human) }
       format.json { head :no_content }
     end
   end
