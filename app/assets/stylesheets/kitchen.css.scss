@@ -1,49 +1,52 @@
-.container {
-  .fridge {
-    h3 {
-      margin-bottom: $base-line-height / 2;
-      border-bottom: 1px solid $base-border-color;
-    }
-    h4 {
-      margin-bottom: $base-line-height / 2;
-    }
-    .food {
-      background: $teal;
-      height: 120px;
-      padding: $base-line-height / 2;
-      margin-bottom: $base-line-height;
-      .control {
-        a {
-          color: $white;
-          border-color: $white;
-        }
-      }
-      .name {
-        padding: 0 0 0.5em 0;
-        margin-bottom: 0.5em;
-        font-size: $base-font-size * 1.5;
-        font-weight: bold;
+h1 {
+  font-size: $base-font-size * 0.8;
+  border-bottom: 2px solid $black;
+  margin-bottom: $base-line-height;
+}
+.fridge {
+  h3 {
+    margin-bottom: $base-line-height / 2;
+    border-bottom: 1px solid $base-border-color;
+  }
+  h4 {
+    margin-bottom: $base-line-height / 2;
+  }
+  .food {
+    background: $teal;
+    height: 120px;
+    padding: $base-line-height / 2;
+    margin-bottom: $base-line-height;
+    .control {
+      a {
         color: $white;
-        border-bottom: 1px solid $white;
+        border-color: $white;
       }
+    }
+    .name {
+      padding: 0 0 0.5em 0;
+      margin-bottom: 0.5em;
+      font-size: $base-font-size * 1.5;
+      font-weight: bold;
+      color: $white;
+      border-bottom: 1px solid $white;
+    }
+    .limit {
+      font-size: $base-font-size * 2.5;
+      font-weight: bold;
+      color: lighten($teal, 15);
+    }
+    &.dead {
+      background: $medium-gray;
+      color: $light-gray;
       .limit {
-        font-size: $base-font-size * 2.5;
-        font-weight: bold;
-        color: lighten($teal, 15);
-      }
-      &.dead {
-        background: $medium-gray;
         color: $light-gray;
-        .limit {
-          color: $light-gray;
-        }
       }
-      &.shortly {
-        background: $red;
+    }
+    &.shortly {
+      background: $red;
+      color: $white;
+      .limit {
         color: $white;
-        .limit {
-          color: $white;
-        }
       }
     }
   }

@@ -3,3 +3,5 @@ p.navigation = link_to 'Back', kitchen_board_path
 h1 Editing fridge
 
 == render 'form'
+
+p.navigation = link_to 'Delete this fridge', fridge_path(@fridge), method: :delete

@@ -38,11 +38,6 @@ header {
 }
 
 body {
-  h1 {
-    font-size: $base-font-size * 0.8;
-    border-bottom: 2px solid $black;
-    margin-bottom: $base-line-height;
-  }
   .control {
     font-size: $base-font-size * 0.7;
     float: right;

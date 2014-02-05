@@ -6,14 +6,12 @@ h2 Fridges
   .fridge
     p.control
       = link_to 'Edit', edit_fridge_path(fridge)
-      = link_to 'Delete', edit_fridge_path(fridge)
+      = link_to 'New food', new_fridge_food_path(fridge), class: 'button'
     h3 = fridge.name
-    p.control = link_to 'New food', new_fridge_food_path(fridge), class: 'button'
-    h4 Foods
     - fridge.foods.each do |food|
       .food class="#{food.status}"
         p.control
-          = link_to 'Edit', edit_fridge_food_path(fridge, food)
           = link_to 'Delete', fridge_food_path(fridge, food), method: :delete
-        h5.name = food.name
+          = link_to 'Edit', edit_fridge_food_path(fridge, food)
+        h4.name = food.name
         p.limit = "Limit: #{food.limit}"
