@@ -10,6 +10,14 @@ en:
   heading:
     new: New %{model}
 
+  factory:
+    fridge:
+      name: Fridge
+    food:
+      name_1: Milk
+      name_2: Egg
+      name_3: Onion
+
   deadline:
     preset:
       one_day: 1 day

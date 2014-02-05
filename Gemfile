@@ -65,6 +65,9 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 
+# Use for building examples
+gem 'factory_girl'
+
 # Use Expression monitoring
 gem 'rollbar'
 

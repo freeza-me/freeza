@@ -14,6 +14,14 @@ ja:
     new: 新しい%{model}の登録
     edit: "%{model}の編集"
 
+  factory:
+    fridge:
+      name: 冷蔵庫
+    food:
+      name_1: 牛乳
+      name_2: たまご
+      name_3: たまねぎ
+
   deadline:
     preset:
       one_day: 1日後
