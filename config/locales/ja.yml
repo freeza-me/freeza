@@ -7,8 +7,11 @@ ja:
 
   kitchen: キッチン
 
+  edit: 変更
+  delete: 削除
+
   heading:
-    new: 新しい%{model}の作成
+    new: 新しい%{model}の登録
     edit: "%{model}の編集"
 
   deadline:

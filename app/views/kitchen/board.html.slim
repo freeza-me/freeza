@@ -3,15 +3,15 @@ h1 = t :kitchen
 - current_user.fridges.each do |fridge|
   .fridge
     p.control
-      = link_to 'Edit', edit_fridge_path(fridge)
-      = link_to 'New food', new_fridge_food_path(fridge), class: 'button'
+      = link_to t('edit'), edit_fridge_path(fridge)
+      = link_to t('heading.new', model: Food.model_name.human), new_fridge_food_path(fridge), class: 'button'
     h3 = fridge.name
     - fridge.foods.each do |food|
       .food class="#{food.status}"
         p.control
-          = link_to 'Delete', fridge_food_path(fridge, food), method: :delete
-          = link_to 'Edit', edit_fridge_food_path(fridge, food)
+          = link_to t('delete'), fridge_food_path(fridge, food), method: :delete
+          = link_to t('edit'), edit_fridge_food_path(fridge, food)
         h4.name = food.name
         p.limit = "Limit: #{food.limit}"
 
-p.control = link_to 'New fridge', new_fridge_path, class: 'button'
+p.control = link_to t('heading.new', model: Fridge.model_name.human), new_fridge_path, class: 'button'

@@ -4,6 +4,9 @@ en:
 
   kitchen: Kitchen
 
+  edit: Edit
+  delete: Delete
+
   heading:
     new: New %{model}
 
