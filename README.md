@@ -5,3 +5,4 @@ Freeza
 
 [![wercker status](https://app.wercker.com/status/46f512c0d6fd17c41e9add2f528e9d11 "wercker status")](https://app.wercker.com/project/bykey/46f512c0d6fd17c41e9add2f528e9d11)
 
+[Freeza - production](http://www.freeza.me/)
