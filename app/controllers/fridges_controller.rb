@@ -64,8 +64,11 @@ class FridgesController < ApplicationController
   end
 
   def inbound
-    if params[:mandrill_events] && data = JSON.decode(params[:mandrill_events])
+    if params[:mandrill_events] && data = ActiveSupport::JSON.decode(params[:mandrill_events])
       puts data
+      render text: 'success'
+    else
+      raise
     end
   end
 

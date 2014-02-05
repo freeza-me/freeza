@@ -37,4 +37,8 @@ class FridgesControllerTest < ActionController::TestCase
 
     assert_redirected_to kitchen_board_path
   end
+
+  def test_inbound
+    post :inbound, mandrill_events: { hoge: 'hoge' }.to_json
+  end
 end
