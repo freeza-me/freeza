@@ -57,10 +57,8 @@ gem 'slim-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
+# Use for mobile
+gem 'iphone_helpers', '~> 3.0.0'
 
 # User authorization
 gem 'devise'
@@ -75,6 +73,10 @@ gem 'unicorn-rails'
 
 group :development do
 
+  # Use for favicon
+  gem 'favicon_maker'
+
+  # Use for i18n translate
   gem 'i18n_generators'
 
   # Quiet Assets Log
