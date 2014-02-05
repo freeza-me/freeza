@@ -18,6 +18,8 @@
         border-color: $white;
         &.critical {
           background: $red;
+          color: $white;
+          border-color: $red;
         }
       }
     }
@@ -35,10 +37,10 @@
       color: lighten($teal, 15);
     }
     &.dead {
-      background: $medium-gray;
-      color: $light-gray;
+      background: $light-gray;
+      color: $white;
       .limit {
-        color: $light-gray;
+        color: $white;
       }
     }
     &.shortly {

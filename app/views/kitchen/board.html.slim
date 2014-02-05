@@ -9,8 +9,8 @@ h1 = t :kitchen
     - fridge.foods.each do |food|
       .food class="#{food.status}"
         p.control
-          = link_to t('delete'), fridge_food_path(fridge, food), method: :delete, class: 'critical' if food.status == 'dead'
           = link_to t('edit'), edit_fridge_food_path(fridge, food)
+          = link_to t('delete'), fridge_food_path(fridge, food), method: :delete, class: 'critical' if food.status == 'dead'
         h4.name = food.name
         p.limit = "Limit: #{food.limit}"
 
