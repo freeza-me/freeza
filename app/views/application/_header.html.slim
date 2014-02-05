@@ -4,7 +4,6 @@ header
 
     ul.control
       - if current_user
-        li = link_to 'New fridge', new_fridge_path
         li = link_to 'sign out', destroy_user_session_path, method: :delete
       - else
         li = link_to 'sign in', new_user_session_path

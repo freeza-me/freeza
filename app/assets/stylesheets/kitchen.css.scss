@@ -5,7 +5,12 @@
       border-bottom: 1px solid $base-border-color;
     }
     .control {
+      font-size: $base-font-size * 0.7;
       float: right;
+      a {
+        @extend %button;
+        margin-left: $base-line-height / 4;
+      }
     }
     .food {
       background: $teal;
