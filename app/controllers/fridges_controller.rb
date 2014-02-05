@@ -66,7 +66,7 @@ class FridgesController < ApplicationController
 
   def inbound
     if params[:mandrill_events] && data = ActiveSupport::JSON.decode(params[:mandrill_events])
-      if data['event'] == 'inbound'
+      if data['event'] && data['event'] == 'inbound'
         if (m = data['msg']['to'].match(/^fridge-(.*)@freeza.me$/))[0] && token = m[1]
           if @fridge = Fridge.where(inbound_token: token).first
             name = data['msg']['subject'].present? ? data['msg']['subject'] : data['msg']['text'].split(/\n/)[0]
