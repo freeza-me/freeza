@@ -2,6 +2,18 @@ en:
   lead: "For your information. I'll give you the number of my power level. It's 530,000."
   language: Language
 
+  kitchen: Kitchen
+
+  heading:
+    new: New %{model}
+
+  deadline:
+    preset:
+      one_day: 1 day
+      two_days: 2 day
+      three_days: 3 days
+      one_week: 1 week
+
   activerecord:
     flash:
       created: "%{model} was successfully created."

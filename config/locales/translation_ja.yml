@@ -1,12 +1,13 @@
 ja:
   activerecord:
     flash:
-      created: "新しい%{model}を作成しました。"
+      created: "新しい%{model}を登録しました。"
       updated: "%{model}の変更を保存しました。"
       deleted: "%{model}を削除しました。"
+
     models:
       food: 食材
-      fridge: ボックス
+      fridge: 冷蔵庫
       user: ユーザー
 
     attributes:

@@ -1,5 +1,5 @@
 p.navigation = link_to 'Back', kitchen_board_path
 
-h1 Editing food
+h1 = t('heading.edit', model: @food.class.model_name.human)
 
 == render 'form'

@@ -8,9 +8,11 @@
     = f.label :deadline
     = f.date_select :deadline
     p
-      = link_to "1 day", "#1day",   class: 'deadline-preset', data: { deadline: (1.day.since.to_date.to_formatted_s(:db)) }
+      = link_to t('deadline.preset.one_day'), "#1day",   class: 'deadline-preset', data: { deadline: (1.day.since.to_date.to_formatted_s(:db)) }
       '  /
-      = link_to "3 days", "#3days", class: 'deadline-preset', data: { deadline: (3.days.since.to_date.to_formatted_s(:db)) }
+      = link_to t('deadline.preset.two_days'), "#2days", class: 'deadline-preset', data: { deadline: (2.days.since.to_date.to_formatted_s(:db)) }
       '  /
-      = link_to "1 week", "#1week", class: 'deadline-preset', data: { deadline: (1.week.since.to_date.to_formatted_s(:db)) }
-  .actions = f.submit 'Save'
+      = link_to t('deadline.preset.three_days'), "#3days", class: 'deadline-preset', data: { deadline: (3.days.since.to_date.to_formatted_s(:db)) }
+      '  /
+      = link_to t('deadline.preset.one_week'), "#1week", class: 'deadline-preset', data: { deadline: (1.week.since.to_date.to_formatted_s(:db)) }
+  .actions = f.submit

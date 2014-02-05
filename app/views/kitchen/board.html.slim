@@ -1,7 +1,5 @@
-h1 Kitchen
+h1 = t :kitchen
 
-p.control = link_to 'New fridge', new_fridge_path, class: 'button'
-h2 Fridges
 - current_user.fridges.each do |fridge|
   .fridge
     p.control
@@ -15,3 +13,5 @@ h2 Fridges
           = link_to 'Edit', edit_fridge_food_path(fridge, food)
         h4.name = food.name
         p.limit = "Limit: #{food.limit}"
+
+p.control = link_to 'New fridge', new_fridge_path, class: 'button'

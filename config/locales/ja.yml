@@ -5,6 +5,19 @@ ja:
   sign_out: ログアウト
   sign_up: サインアップ
 
+  kitchen: キッチン
+
+  heading:
+    new: 新しい%{model}の作成
+    edit: "%{model}の編集"
+
+  deadline:
+    preset:
+      one_day: 1日後
+      two_days: 2日後
+      three_days: 3日後
+      one_week: 1週間後
+
   date:
     abbr_day_names:
     - 日
