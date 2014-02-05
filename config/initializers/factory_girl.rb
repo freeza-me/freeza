@@ -1,3 +1,4 @@
+FactoryGirl.find_definitions
 FactoryGirl.define do
   factory :fridge_example, parent: :fridge do
     name I18n.t('factory.fridge.name')
