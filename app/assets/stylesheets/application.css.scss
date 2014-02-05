@@ -73,6 +73,9 @@ footer {
     border-top: 1px solid $base-border-color;
     .settings {
       float: right;
+      @include media($small-screen) {
+        float: none;
+      }
     }
     .copyright {
       margin: 0;
