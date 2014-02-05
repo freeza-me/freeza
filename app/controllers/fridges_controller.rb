@@ -63,6 +63,12 @@ class FridgesController < ApplicationController
     end
   end
 
+  def inbound
+    if params[:mandrill_events] && data = JSON.decode(params[:mandrill_events])
+      puts data
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_fridge

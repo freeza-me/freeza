@@ -11,6 +11,9 @@ Freeza::Application.routes.draw do
   end
 
   resources :fridges, only: [:new, :create, :edit, :update, :destroy] do
+    collection do
+      post 'inbound'
+    end
     resources :foods, only: [:new, :create, :edit, :update, :destroy]
   end
 end
