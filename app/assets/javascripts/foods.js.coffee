@@ -1,3 +1,8 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+jQuery ($)->
+
+  $('.deadline-preset').on 'click', ->
+    date = $(@).data('deadline')
+    [y, m, d] = date.split('-')
+    $.each { "1i": y, "2i": m, "3i": d }, (key, val)=>
+      $(@).parents('.field').find("select[id$=#{key}]").val(parseInt(val))
+    false
