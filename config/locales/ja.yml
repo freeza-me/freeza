@@ -13,6 +13,7 @@ ja:
   heading:
     new: 新しい%{model}の登録
     edit: "%{model}の編集"
+    settings: "%{model}の設定"
 
   navigation:
     back: 戻る

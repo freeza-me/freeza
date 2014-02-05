@@ -9,6 +9,8 @@ en:
 
   heading:
     new: New %{model}
+    edif: Edit %{model}
+    settings: "%{model} Settings"
 
   navigation:
     back: Back

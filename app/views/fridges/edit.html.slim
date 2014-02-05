@@ -4,4 +4,8 @@ h1 = t('heading.edit', model: @fridge.class.model_name.human)
 
 == render 'form'
 
+h1 = t('heading.settings', model: @fridge.class.model_name.human)
+
+pre = @fridge.inbound_address
+
 p.navigation = link_to t('navigation.delete', model: @fridge.class.model_name.human), fridge_path(@fridge), method: :delete, class: 'critical'
