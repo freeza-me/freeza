@@ -5,11 +5,6 @@ ja:
   sign_out: ログアウト
   sign_up: サインアップ
 
-  devise:
-    views:
-      forgot_your_password?: パスワードを忘れた方へ
-      didnt_receive_confirmation_instructions?: 確認メールが届かない方へ
-      didnt_receive_unlock_instructions?: 凍結解除メールが届かない方へ
   date:
     abbr_day_names:
     - 日

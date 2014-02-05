@@ -63,6 +63,7 @@ gem 'iphone_helpers', '~> 3.0.0'
 # User authorization
 gem 'devise'
 gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 # Use Expression monitoring
 gem 'rollbar'
