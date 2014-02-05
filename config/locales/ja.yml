@@ -1,8 +1,8 @@
 ja:
   lead: "もう食材を腐らせてしまうことはありません。"
   language: 言語
-  sign_in: サインイン
-  sign_out: サインアウト
+  sign_in: ログイン
+  sign_out: ログアウト
   sign_up: サインアップ
 
   devise:
