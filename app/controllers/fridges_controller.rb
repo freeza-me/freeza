@@ -66,9 +66,11 @@ class FridgesController < ApplicationController
 
   def inbound
     if params[:mandrill_events]
-      token, name, deadline = Fridge.parse_inbound_data(params[:mandrill_events])
+      token, foods = Fridge.parse_inbound_data(params[:mandrill_events])
       if @fridge = Fridge.where(inbound_token: token).first
-        @fridge.foods.create name: name, deadline: deadline
+        foods.each do |name, deadline|
+          @fridge.foods.create name: name, deadline: deadline
+        end
       end
       render text: 'success'
     else
@@ -77,13 +79,13 @@ class FridgesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_fridge
-      @fridge = current_user.fridges.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_fridge
+    @fridge = current_user.fridges.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def fridge_params
-      params.require(:fridge).permit(:name)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def fridge_params
+    params.require(:fridge).permit(:name)
+  end
 end

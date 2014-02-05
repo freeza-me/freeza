@@ -14,17 +14,10 @@ class Fridge < ActiveRecord::Base
     raise unless data['event'] && data['event'] == 'inbound'
     raise unless data['msg'] && msg = data['msg']
     raise unless (m = msg['to'][0][0].match(/^fridge-(.*)@freeza.me$/))[0] && token = m[1]
-    name, deadline = if msg['subject'].present?
-                       [msg['subject'], msg['text'] ]
-                     else
-                       msg['text'].split(/\n/)[0..1]
-                     end
-    deadline = if deadline.present?
-                 Date.parse(deadline)
-               else
-                 1.week.since
-               end
-    [token, name, deadline]
+    foods = [msg['subject']] + msg['text'].split(/\n/)
+    foods = foods.map{|food| food.split(/,/) }
+    foods = foods.map{|name, deadline| [name, (deadline ? Date.parse(deadline) : 1.week.since)] }
+    [token, foods]
   end
 
   def inbound_address
