@@ -1,4 +1,4 @@
-FactoryGirl.find_definitions
+FactoryGirl.find_definitions if Rails.env.production?
 FactoryGirl.define do
   factory :fridge_example, parent: :fridge do
     name I18n.t('factory.fridge.name')
