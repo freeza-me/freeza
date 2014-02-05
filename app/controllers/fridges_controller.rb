@@ -1,5 +1,5 @@
 class FridgesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, expect: [:inbound]
 
   before_action :set_fridge, only: [:show, :edit, :update, :destroy]
 
