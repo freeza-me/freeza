@@ -75,6 +75,9 @@ gem 'rollbar'
 gem 'unicorn'
 gem 'unicorn-rails'
 
+# Use newrelic for monitoring
+gem 'newrelic_rpm'
+
 group :development do
 
   # Use for favicon
