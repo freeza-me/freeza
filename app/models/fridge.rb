@@ -16,7 +16,14 @@ class Fridge < ActiveRecord::Base
     raise unless (m = msg['to'][0][0].match(/^fridge-(.*)@freeza.me$/))[0] && token = m[1]
     foods = [msg['subject']] + msg['text'].split(/\n/)
     foods = foods.map{|food| food.split(/,/) }
-    foods = foods.map{|name, deadline| [name, (deadline ? Date.parse(deadline) : 1.week.since)] }
+    foods = foods.map do |name, deadline|
+      deadline = begin
+                   Date.parse(deadline)
+                 rescue
+                   1.week.since
+                 end
+      [name, deadline]
+    end
     [token, foods]
   end
 
