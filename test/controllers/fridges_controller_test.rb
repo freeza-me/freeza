@@ -40,5 +40,6 @@ class FridgesControllerTest < ActionController::TestCase
 
   def test_inbound
     post :inbound, mandrill_events: { hoge: 'hoge' }.to_json
+    assert_response :success
   end
 end
