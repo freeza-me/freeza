@@ -65,15 +65,10 @@ class FridgesController < ApplicationController
   end
 
   def inbound
-    if params[:mandrill_events] && data = ActiveSupport::JSON.decode(params[:mandrill_events])
-      data = data.first if data.is_a? Array
-      if data['event'] && data['event'] == 'inbound'
-        if (m = data['msg']['to'][0][0].match(/^fridge-(.*)@freeza.me$/))[0] && token = m[1]
-          if @fridge = Fridge.where(inbound_token: token).first
-            name = data['msg']['subject'].present? ? data['msg']['subject'] : data['msg']['text'].split(/\n/)[0]
-            @fridge.foods.create name: name, deadline: Date.today
-          end
-        end
+    if params[:mandrill_events]
+      token, name, deadline = Fridge.parse_inbound_data(params[:mandrill_events])
+      if @fridge = Fridge.where(inbound_token: token).first
+        @fridge.foods.create name: name, deadline: deadline
       end
       render text: 'success'
     else
