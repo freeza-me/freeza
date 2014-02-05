@@ -1,5 +1,6 @@
 class FridgesController < ApplicationController
   before_action :authenticate_user!, expect: [:inbound]
+  skip_before_action :verify_authenticity_token, only: [:inbound]
 
   before_action :set_fridge, only: [:show, :edit, :update, :destroy]
 
