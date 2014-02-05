@@ -11,132 +11,130 @@ $form-error-color: $red;
 
 form {
   margin-bottom: $base-line-height;
-}
 
-fieldset {
-  background: lighten($base-border-color, 10);
-  border: 1px solid $base-border-color;
-  margin: 0 0 ($base-line-height / 2) 0;
-  padding: $base-line-height;
-}
-
-input {
-  display: block;
-  font-family: $form-font-family;
-  font-size: $form-font-size;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: $base-line-height / 4;
-
-  &.required:after {
-    content: "*";
+  fieldset {
+    background: lighten($base-border-color, 10);
+    border: 1px solid $base-border-color;
+    margin: 0 0 ($base-line-height / 2) 0;
+    padding: $base-line-height;
   }
 
-  abbr {
-    display: none;
-  }
-}
-
-textarea,
-#{$all-text-inputs} {
-  @include box-sizing(border-box);
-  @include transition(border-color);
-  background-color: white;
-  border-radius: $form-border-radius;
-  border: 1px solid $form-border-color;
-  box-shadow: $form-box-shadow;
-  font-family: $form-font-family;
-  font-size: $form-font-size;
-  margin-bottom: $base-line-height / 2;
-  padding: ($base-line-height / 3) ($base-line-height / 3);
-  resize: vertical;
-  width: 100%;
-
-  &:hover {
-    border-color: $form-border-color-hover;
+  input {
+    display: block;
+    font-family: $form-font-family;
+    font-size: $form-font-size;
   }
 
-  &:focus {
-    border-color: $form-border-color-focus;
-    box-shadow: $form-box-shadow-focus;
-    outline: none;
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: $base-line-height / 4;
+
+    &.required:after {
+      content: "*";
+    }
+
+    abbr {
+      display: none;
+    }
   }
-}
 
-input[type="search"] {
-  @include appearance(none);
-}
-
-input[type="checkbox"], input[type="radio"] {
-  display: inline;
-  margin-right: $base-line-height / 4;
-}
-
-input[type="file"] {
-  width: 100%;
-}
-
-select {
-  @include appearance(none);
-  width: auto;
-  margin-bottom: $base-line-height;
-  @include box-sizing(border-box);
-  @include transition(border-color);
-  background-color: white;
-  border-radius: $form-border-radius;
-  border: 1px solid $form-border-color;
-  box-shadow: $form-box-shadow;
-  font-family: $form-font-family;
-  font-size: $form-font-size;
-  margin-bottom: $base-line-height / 2;
-  padding: ($base-line-height / 3) ($base-line-height / 3);
-  resize: vertical;
-}
-
-button,
-input[type="submit"] {
-  @extend %button;
-  @include appearance(none);
-  border: 2px solid $dark-gray;
-  cursor: pointer;
-  font-weight: bold;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-}
-
-.actions {
-  padding: ($base-line-height / 2) 0;
-}
-
-#error_explanation {
-  border: 4px solid $form-error-color;
-  padding: $base-line-height / 2;
-  margin: ($base-line-height / 2) 0;
-  background: $white;
-  h2 {
-    color: $form-error-color;
-    font-size: $base-font-size;
-    border-bottom: 1px solid $form-error-color;
+  textarea,
+  #{$all-text-inputs} {
+    @include box-sizing(border-box);
+    @include transition(border-color);
+    background-color: white;
+    border-radius: $form-border-radius;
+    border: 1px solid $form-border-color;
+    box-shadow: $form-box-shadow;
+    font-family: $form-font-family;
+    font-size: $form-font-size;
     margin-bottom: $base-line-height / 2;
+    padding: ($base-line-height / 3) ($base-line-height / 3);
+    resize: vertical;
+    width: 100%;
+
+    &:hover {
+      border-color: $form-border-color-hover;
+    }
+
+    &:focus {
+      border-color: $form-border-color-focus;
+      box-shadow: $form-box-shadow-focus;
+      outline: none;
+    }
   }
-  ul {
-    li {
+
+  input[type="search"] {
+    @include appearance(none);
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+    display: inline;
+    margin-right: $base-line-height / 4;
+  }
+
+  input[type="file"] {
+    width: 100%;
+  }
+
+  select {
+    @include appearance(none);
+    width: auto;
+    margin-bottom: $base-line-height;
+    @include box-sizing(border-box);
+    @include transition(border-color);
+    background-color: white;
+    border-radius: $form-border-radius;
+    border: 1px solid $form-border-color;
+    box-shadow: $form-box-shadow;
+    font-family: $form-font-family;
+    font-size: $form-font-size;
+    margin-bottom: $base-line-height / 2;
+    padding: ($base-line-height / 3) ($base-line-height / 3);
+    resize: vertical;
+  }
+
+  button,
+  input[type="submit"] {
+    @extend %button;
+    @include appearance(none);
+    border: 2px solid $dark-gray;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .actions {
+    padding: ($base-line-height / 2) 0;
+  }
+
+  #error_explanation {
+    border: 4px solid $form-error-color;
+    padding: $base-line-height / 2;
+    margin: ($base-line-height / 2) 0;
+    background: $white;
+    h2 {
+      color: $form-error-color;
+      font-size: $base-font-size;
+      border-bottom: 1px solid $form-error-color;
+      margin-bottom: $base-line-height / 2;
+    }
+    ul {
+      li {
+      }
+    }
+  }
+
+  .field_with_errors {
+    label {
+      color: $form-error-color;
+    }
+    textarea,
+    #{$all-text-inputs} {
+      border-color: $form-error-color;
     }
   }
 }
-
-.field_with_errors {
-  label {
-    color: $form-error-color;
-  }
-  textarea,
-  #{$all-text-inputs} {
-    border-color: $form-error-color;
-  }
-}
-
-

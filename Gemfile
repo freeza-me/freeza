@@ -1,7 +1,18 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
+# Bundler
+gem 'bundler', '~> 1.5.2'
+
+# dotenv
+gem 'dotenv-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
+
+# Use i18n
+gem 'rails-i18n', '~> 4.0.0'
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
@@ -53,6 +64,7 @@ end
 
 # User authorization
 gem 'devise'
+gem 'devise-i18n'
 
 # Use Expression monitoring
 gem 'rollbar'
@@ -62,6 +74,8 @@ gem 'unicorn'
 gem 'unicorn-rails'
 
 group :development do
+
+  gem 'i18n_generators'
 
   # Quiet Assets Log
   gem 'quiet_assets', '~> 1.0.2'

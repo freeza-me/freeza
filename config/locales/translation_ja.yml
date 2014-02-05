@@ -1,0 +1,41 @@
+ja:
+  activerecord:
+    models:
+      food: 食材
+      fridge: ボックス
+      user: ユーザー
+
+    attributes:
+      food:
+        deadline: 消費期限
+        fridge: :activerecord.models.fridge  #g
+        name: 名前
+
+      fridge:
+        foods: :activerecord.models.food
+        name: 名前
+        user: :activerecord.models.user  #g
+
+      user:
+        confirmation_sent_at: confirmation_sent_at  #g
+        confirmation_token: confirmation_token  #g
+        confirmed_at: confirmed_at  #g
+        current_sign_in_at: current_sign_in_at  #g
+        current_sign_in_ip: current_sign_in_ip  #g
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワードの確認
+        encrypted_password: encrypted_password  #g
+        failed_attempts: failed_attempts  #g
+        foods: :activerecord.models.food
+        fridges: :activerecord.models.fridge
+        last_sign_in_at: last_sign_in_at  #g
+        last_sign_in_ip: last_sign_in_ip  #g
+        locked_at: locked_at  #g
+        name: ユーザー名
+        remember_me: サインインを記憶する
+        remember_created_at: remember_created_at  #g
+        reset_password_sent_at: reset_password_sent_at  #g
+        reset_password_token: reset_password_token  #g
+        unconfirmed_email: unconfirmed_email  #g
+        unlock_token: unlock_token  #g

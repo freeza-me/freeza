@@ -4,6 +4,8 @@ Freeza::Application.routes.draw do
 
   root "home#show"
 
+  post "locale", to: "locale#update"
+
   namespace "kitchen" do
     get "board"
   end

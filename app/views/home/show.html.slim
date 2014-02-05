@@ -9,8 +9,8 @@ html
     .cover
       .container
         h1 Freeza
-        p.lead "For your information. I'll give you the number of my power level. It's 530,000."
-        p = link_to 'Sign up', new_user_registration_path, class: 'signup'
+        p.lead = t('lead')
+        p = link_to t('sign_up'), new_user_registration_path, class: 'signup'
 
     /.how_to_use
       .container

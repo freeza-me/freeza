@@ -1,3 +1,7 @@
 footer
   .container
+    p.settings
+      = t :language
+      ':
+      = select_tag "set-locale", options_for_select(I18n.available_locales, I18n.locale)
     p.copyright &copy; freeza all rights reserved.

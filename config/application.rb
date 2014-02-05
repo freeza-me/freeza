@@ -14,7 +14,7 @@ Bundler.require(:default, Rails.env)
 module Freeza
   class Application < Rails::Application
 
-    I18n.enforce_available_locales = false
+    config.i18n.enforce_available_locales = false
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -26,7 +26,9 @@ module Freeza
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = :en
+
+    config.i18n.available_locales = [:en, :ja]
 
     ENV['REDIS_HOST'] ||= ENV['BOXEN_REDIS_HOST'] || 'localhost'
     ENV['REDIS_PORT'] ||= ENV['BOXEN_REDIS_PORT'] || '6379'

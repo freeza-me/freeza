@@ -11,7 +11,7 @@
     <div>
       <%= f.label :remember_me do %>
         <%= f.check_box :remember_me %>
-        Remember me
+        <%= f.object.class.human_attribute_name 'remember_me' %>
       <% end %>
     </div>
   <% end -%>
