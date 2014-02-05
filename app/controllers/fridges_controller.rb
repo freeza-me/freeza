@@ -30,7 +30,7 @@ class FridgesController < ApplicationController
 
     respond_to do |format|
       if @fridge.save
-        format.html { redirect_to kitchen_board_path, notice: t('activerecord.flash.created', model: @fridge.class.model_name.human) }
+        format.html { redirect_to kitchen_board_path, notice: t('activerecord.flash.created', model: @fridge.name) }
         format.json { render action: 'show', status: :created, location: kitchen_board_path }
       else
         format.html { render action: 'new' }
@@ -44,7 +44,7 @@ class FridgesController < ApplicationController
   def update
     respond_to do |format|
       if @fridge.update(fridge_params)
-        format.html { redirect_to kitchen_board_path, notice: t('activerecord.flash.updated', model: @fridge.class.model_name.human) }
+        format.html { redirect_to kitchen_board_path, notice: t('activerecord.flash.updated', model: @fridge.name) }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -58,7 +58,7 @@ class FridgesController < ApplicationController
   def destroy
     @fridge.destroy
     respond_to do |format|
-      format.html { redirect_to kitchen_board_path, notice: t('activerecord.flash.deleted', model: @fridge.class.model_name.human) }
+      format.html { redirect_to kitchen_board_path, notice: t('activerecord.flash.deleted', model: @fridge.name) }
       format.json { head :no_content }
     end
   end

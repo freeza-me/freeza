@@ -1,7 +1,7 @@
 ja:
   activerecord:
     flash:
-      created: "新しい%{model}を登録しました。"
+      created: "%{model}を登録しました。"
       updated: "%{model}の変更を保存しました。"
       deleted: "%{model}を削除しました。"
 
