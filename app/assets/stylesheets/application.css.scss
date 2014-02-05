@@ -33,19 +33,35 @@ header {
   .control {
     padding: 0;
     margin: 0;
-    float: right;
     line-height: 30px;
-    li {
-      display: inline;
-      margin-left: 1.0em;
-      a {
-        @extend %button;
-      }
-    }
   }
 }
 
 body {
+  h1 {
+    font-size: $base-font-size * 0.8;
+    border-bottom: 2px solid $black;
+    margin-bottom: $base-line-height;
+  }
+  .control {
+    font-size: $base-font-size * 0.7;
+    float: right;
+    a {
+      @extend %button;
+      margin-left: $base-line-height / 4;
+    }
+  }
+  h2 {
+    margin-bottom: $base-line-height / 2;
+  }
+  .navigation {
+    font-size: $base-font-size * 0.7;
+    margin-bottom: $base-line-height;
+    a {
+      margin-right: $base-line-height / 4;
+    }
+  }
+
   &.home {
     @import "home";
   }

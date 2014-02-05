@@ -4,13 +4,8 @@
       margin-bottom: $base-line-height / 2;
       border-bottom: 1px solid $base-border-color;
     }
-    .control {
-      font-size: $base-font-size * 0.7;
-      float: right;
-      a {
-        @extend %button;
-        margin-left: $base-line-height / 4;
-      }
+    h4 {
+      margin-bottom: $base-line-height / 2;
     }
     .food {
       background: $teal;
@@ -18,13 +13,9 @@
       padding: $base-line-height / 2;
       margin-bottom: $base-line-height;
       .control {
-        font-size: $base-font-size * 0.7;
-        float: right;
         a {
-          @extend %button;
           color: $white;
           border-color: $white;
-          margin-left: $base-line-height / 4;
         }
       }
       .name {

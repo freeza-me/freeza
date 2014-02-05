@@ -2,11 +2,11 @@ header
 
   .container
 
-    ul.control
+    p.control
       - if current_user
-        li = link_to 'sign out', destroy_user_session_path, method: :delete
+        = link_to 'sign out', destroy_user_session_path, method: :delete
       - else
-        li = link_to 'sign in', new_user_session_path
+        = link_to 'sign in', new_user_session_path
 
     div.logo = link_to 'Freeza', root_path
 
