@@ -1,10 +1,5 @@
 = form_for [@fridge, @food] do |f|
-  - if @food.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@food.errors.count, "error")} prohibited this food from being saved:"
-      ul
-        - @food.errors.full_messages.each do |message|
-          li = message
+  = error_messages_for @food, id: :error_explanation
 
   .field
     = f.label :name

@@ -1,5 +1,7 @@
 ja:
   activerecord:
+    created: "新しい%{model}を作成しました。"
+    updated: "%{model}の変更を保存しました。"
     models:
       food: 食材
       fridge: ボックス
