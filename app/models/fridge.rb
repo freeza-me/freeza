@@ -9,7 +9,7 @@ class Fridge < ActiveRecord::Base
   validates :inbound_token, presence: true
 
   def inbound_address
-    "fridge-#{self.inbound_token}@freeza.com"
+    "fridge-#{self.inbound_token}@freeza.me"
   end
 
   private

@@ -39,7 +39,9 @@ class FridgesControllerTest < ActionController::TestCase
   end
 
   def test_inbound
-    post :inbound, mandrill_events: { hoge: 'hoge' }.to_json
+    assert_difference('Food.count') do
+      post :inbound, mandrill_events: { event: 'inbound', msg: { to: @fridge.inbound_address, subject: 'Test Food' } }.to_json
+    end
     assert_response :success
   end
 end
