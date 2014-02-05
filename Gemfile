@@ -20,10 +20,6 @@ gem 'mysql2'
 # Use redis as cache or queue store
 gem 'redis-rails'
 
-# User Rack::Cache for HTTP caching
-gem 'rack-cache'
-gem 'redis-rack-cache'
-
 # Use Assets Sync
 gem 'asset_sync'
 
