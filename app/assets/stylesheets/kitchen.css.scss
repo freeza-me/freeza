@@ -3,6 +3,21 @@
     margin-bottom: $base-line-height / 2;
     border-bottom: 1px solid $base-border-color;
   }
+  .new-food {
+    margin-bottom: $base-line-height;
+    .button {
+      a {
+        display: block;
+        @extend %button;
+      }
+    }
+    .form {
+      display: none;
+      border: 1px solid $base-border-color;
+      border-radius: $base-border-radius;
+      padding: $base-line-height * 0.8;
+    }
+  }
   h4 {
     margin-bottom: $base-line-height / 2;
   }

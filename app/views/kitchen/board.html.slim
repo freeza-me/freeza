@@ -4,8 +4,13 @@ h1 = t :kitchen
   .fridge
     p.control
       = link_to t('edit'), edit_fridge_path(fridge)
-      = link_to t('heading.new', model: Food.model_name.human), new_fridge_food_path(fridge), class: 'button'
     h3 = fridge.name
+    .new-food
+      p.button
+        = link_to t('heading.new', model: Food.model_name.human), new_fridge_food_path(fridge), class: 'button'
+      .form
+        h4 = t('heading.new', model: Food.model_name.human)
+        = render partial: 'foods/form', locals: { :@fridge => fridge, :@food => Food.new }
     - fridge.foods.each do |food|
       .food class="#{food.status}"
         p.control
