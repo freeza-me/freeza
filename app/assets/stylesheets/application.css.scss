@@ -60,6 +60,19 @@ body {
     }
   }
 
+  form {
+    .actions {
+      padding: ($base-line-height / 2) 0;
+      button,
+      input {
+        @include media($small-screen) {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+
   &.kitchen,
   &.fridges,
   &.foods,

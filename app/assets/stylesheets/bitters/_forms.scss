@@ -10,7 +10,7 @@ $form-font-family: $base-font-family;
 $form-error-color: $red;
 
 form {
-  margin-bottom: $base-line-height;
+  margin-bottom: $base-line-height * 0.5;
 
   fieldset {
     background: lighten($base-border-color, 10);
@@ -105,10 +105,6 @@ form {
     user-select: none;
     vertical-align: middle;
     white-space: nowrap;
-  }
-
-  .actions {
-    padding: ($base-line-height / 2) 0;
   }
 
   #error_explanation {

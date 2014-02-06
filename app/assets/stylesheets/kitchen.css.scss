@@ -12,6 +12,12 @@
       }
     }
     .form {
+      form {
+        margin: 0;
+        .actions {
+          padding-bottom: 0;
+        }
+      }
       display: none;
       border: 1px solid $base-border-color;
       border-radius: $base-border-radius;
