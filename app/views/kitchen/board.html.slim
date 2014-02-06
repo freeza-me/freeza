@@ -12,6 +12,10 @@ h1 = t :kitchen
           = link_to t('edit'), edit_fridge_food_path(fridge, food)
           = link_to t('delete'), fridge_food_path(fridge, food), method: :delete, class: 'critical' if food.status == 'dead'
         h4.name = food.name
-        p.limit = "Limit: #{food.limit}"
+        p.limit = t('datetime.distance_in_words.x_days', count: food.limit)
+        p.deadline
+          = t Food.human_attribute_name(:deadline)
+          br
+          = l food.deadline, format: :long
 
 p.control = link_to t('heading.new', model: Fridge.model_name.human), new_fridge_path, class: 'button'

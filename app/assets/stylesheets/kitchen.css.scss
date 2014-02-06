@@ -8,6 +8,7 @@
   }
   .food {
     background: $teal;
+    color: $white;
     height: 120px;
     padding: $base-line-height / 2;
     margin-bottom: $base-line-height;
@@ -24,17 +25,22 @@
       }
     }
     .name {
-      padding: 0 0 0.5em 0;
-      margin-bottom: 0.5em;
+      padding: 0 0 ($base-line-height * 0.2) 0;
+      margin-bottom: $base-line-height * 0.1;
       font-size: $base-font-size * 1.5;
       font-weight: bold;
-      color: $white;
       border-bottom: 1px solid $white;
     }
     .limit {
+      padding: ($base-line-height * 0.1) 0;
+      float: right;
       font-size: $base-font-size * 2.5;
       font-weight: bold;
       color: lighten($teal, 15);
+    }
+    .deadline {
+      font-size: $base-font-size * 0.8;
+      line-height: $base-line-height * 0.8;
     }
     &.dead {
       background: $light-gray;

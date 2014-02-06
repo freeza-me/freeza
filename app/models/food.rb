@@ -8,11 +8,12 @@ class Food < ActiveRecord::Base
   validates :deadline,  presence: true
 
   def limit
-    (self.deadline - Date.today).to_i
+    limit = (self.deadline - Date.today).to_i
+    limit < 0 ? limit : limit + 1
   end
 
   def status
-    if self.limit < 2
+    if self.limit < 3
       if self.limit < 0
         "dead"
       else
