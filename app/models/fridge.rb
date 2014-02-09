@@ -8,8 +8,7 @@ class Fridge < ActiveRecord::Base
   validates :name,    presence: true
   validates :inbound_token, presence: true
 
-  def self.parse_inbound_data data
-    data = data.first if data.is_a? Array
+  def self.parse_inbound_msg msg
     foods = []
     foods << msg['subject'] if msg['subject']
     foods = foods + msg['text'].split(/\n/) if msg['text']
