@@ -65,16 +65,21 @@ class FridgesController < ApplicationController
   end
 
   def inbound
-    if params[:mandrill_events]
-      token, foods = Fridge.parse_inbound_data(params[:mandrill_events])
-      if @fridge = Fridge.where(inbound_token: token).first
-        foods.each do |name, deadline|
-          @fridge.foods.create name: name, deadline: deadline
-        end
+    raise unless params[:mandrill_events]
+    data = ActiveSupport::JSON.decode(params[:mandrill_events])
+
+    raise unless data['event'] && data['event'] == 'inbound'
+    raise unless data['msg'] && msg = data['msg']
+    raise unless (m = msg['to'][0][0].match(/^fridge-(.*)@freeza.me$/))[0] && token = m[1]
+
+    token, foods = Fridge.parse_inbound_data(data)
+
+    if @fridge = Fridge.where(inbound_token: token).first
+      foods.each do |name, deadline|
+        @fridge.foods.create name: name, deadline: deadline
       end
-      render text: 'success'
-    else
-      raise
+    end
+    render text: 'success'
     end
   end
 

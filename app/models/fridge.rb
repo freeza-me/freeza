@@ -8,12 +8,8 @@ class Fridge < ActiveRecord::Base
   validates :name,    presence: true
   validates :inbound_token, presence: true
 
-  def self.parse_inbound_data json
-    data = ActiveSupport::JSON.decode(json)
+  def self.parse_inbound_data data
     data = data.first if data.is_a? Array
-    raise unless data['event'] && data['event'] == 'inbound'
-    raise unless data['msg'] && msg = data['msg']
-    raise unless (m = msg['to'][0][0].match(/^fridge-(.*)@freeza.me$/))[0] && token = m[1]
     foods = [msg['subject']] + msg['text'].split(/\n/)
     foods = foods.map{|food| food.split(/,/) }
     foods = foods.map do |name, deadline|
