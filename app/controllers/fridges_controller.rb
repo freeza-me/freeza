@@ -65,22 +65,12 @@ class FridgesController < ApplicationController
   end
 
   def inbound
-    raise unless params[:mandrill_events]
-    data = ActiveSupport::JSON.decode(params[:mandrill_events])
-
-    raise unless data['event'] && data['event'] == 'inbound'
-    raise unless data['msg'] && msg = data['msg']
-    raise unless (m = msg['to'][0][0].match(/^fridge-(.*)@freeza.me$/))[0] && token = m[1]
-
-    token, foods = Fridge.parse_inbound_data(data)
-
-    if @fridge = Fridge.where(inbound_token: token).first
-      foods.each do |name, deadline|
-        @fridge.foods.create name: name, deadline: deadline
-      end
+    set_inbound_data
+    raise unless @fridge = Fridge.where(inbound_token: @inbound_token).first
+    Fridge.parse_inbound_data(@inbound_data).each do |name, deadline|
+      @fridge.foods.create name: name, deadline: deadline
     end
     render text: 'success'
-    end
   end
 
   private
@@ -92,5 +82,13 @@ class FridgesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def fridge_params
     params.require(:fridge).permit(:name)
+  end
+
+  def set_inbound_data
+    raise unless params[:mandrill_events]
+    data = @inbound_data = ActiveSupport::JSON.decode(params[:mandrill_events])
+    raise unless data['event'] && data['event'] == 'inbound'
+    raise unless data['msg'] && @msg = data['msg']
+    raise unless (m = msg['to'][0][0].match(/^fridge-(.*)@freeza.me$/))[0] && @inbound_token = m[1]
   end
 end

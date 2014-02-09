@@ -10,17 +10,19 @@ class Fridge < ActiveRecord::Base
 
   def self.parse_inbound_data data
     data = data.first if data.is_a? Array
-    foods = [msg['subject']] + msg['text'].split(/\n/)
+    foods = []
+    foods << msg['subject'] if msg['subject']
+    foods = foods + msg['text'].split(/\n/) if msg['text']
     foods = foods.map{|food| food.split(/,/) }
-    foods = foods.map do |name, deadline|
-      deadline = begin
-                   Date.parse(deadline)
-                 rescue
-                   1.week.since
-                 end
+    foods.map do |name, deadline|
+      deadline =
+        begin
+          Date.parse(deadline)
+        rescue
+          1.week.since
+        end
       [name, deadline]
     end
-    [token, foods]
   end
 
   def inbound_address
