@@ -90,6 +90,6 @@ class FridgesController < ApplicationController
     data = data.first if data.is_a? Array
     raise unless data['event'] && data['event'] == 'inbound'
     raise unless data['msg'] && @inbound_msg = data['msg']
-    raise unless (m = msg['to'][0][0].match(/^fridge-(.*)@freeza.me$/))[0] && @inbound_token = m[1]
+    raise unless (m = @inbound_msg['to'][0][0].match(/^fridge-(.*)@freeza.me$/))[0] && @inbound_token = m[1]
   end
 end
