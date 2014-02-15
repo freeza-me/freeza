@@ -24,7 +24,7 @@ development:
 test:
   adapter: mysql2
   database: freeza_test
-  username: root
+  username: <%= ENV['TRAVIS'] ? 'travis' : 'root' %>
   password:
 <% if socket %>
   host: localhost
