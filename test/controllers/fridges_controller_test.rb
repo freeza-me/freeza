@@ -20,6 +20,12 @@ class FridgesControllerTest < ActionController::TestCase
     assert_redirected_to kitchen_board_path
   end
 
+  def test_create_fail
+    post :create, fridge: attributes_for(:fridge, name: nil)
+    assert_response :success
+  end
+
+
   def test_edit
     get :edit, id: @fridge
     assert_response :success
