@@ -1,7 +1,7 @@
 language: ruby
+cache: bundler
 services:
 - redis-server
-cache: bundler
 rvm:
   - 2.0.0
 bundler_args: --without production
