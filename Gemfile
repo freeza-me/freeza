@@ -121,4 +121,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'webmock'
   gem 'database_cleaner'
+
+  # Coveralls
+  gem 'coveralls', require: false
 end
