@@ -7,7 +7,10 @@ build:
     - rails-database-yml
     - script:
         name: minitest
-        code: bundle exec rake
+        code: bundle exec rake test
+    - script:
+        name: coveralls
+        code: bundle exec rake coveralls:push
   # after-steps:
   #   - wouter/irc-notify:
   #       server: irc.freenode.net
