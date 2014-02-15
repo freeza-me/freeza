@@ -5,6 +5,9 @@ ruby '2.0.0'
 # Bundler
 gem 'bundler', '~> 1.5.2'
 
+# Rake
+gem 'rake', require: false
+
 # dotenv
 gem 'dotenv-rails'
 

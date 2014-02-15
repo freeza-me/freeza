@@ -406,6 +406,7 @@ DEPENDENCIES
   rack-mini-profiler
   rails (= 4.0.2)
   rails-i18n (~> 4.0.0)
+  rake
   redis-rails
   rollbar
   ruby_gntp
