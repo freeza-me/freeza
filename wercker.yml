@@ -7,7 +7,7 @@ build:
     - rails-database-yml
     - script:
         name: minitest
-        code: bundle exec rake test:all
+        code: bundle exec rake test
   # after-steps:
   #   - wouter/irc-notify:
   #       server: irc.freenode.net
