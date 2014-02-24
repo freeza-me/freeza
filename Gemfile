@@ -12,7 +12,7 @@ gem 'rake', require: false
 gem 'dotenv-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.3'
 
 # Use i18n
 gem 'rails-i18n', '~> 4.0.0'
