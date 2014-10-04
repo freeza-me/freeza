@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 
 # Bundler
-gem 'bundler', '~> 1.6.3'
+gem 'bundler'
 
 # Rake
 gem 'rake', require: false
@@ -15,7 +15,7 @@ gem 'dotenv-rails'
 gem 'rails', '4.1.6'
 
 # Use i18n
-gem 'rails-i18n', '~> 4.0.0'
+gem 'rails-i18n'
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
@@ -27,7 +27,7 @@ gem 'redis-rails'
 gem 'asset_sync'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 4.0.3'
 
 # A lightweight semantic grid framework for Sass and Bourbon
 gem 'bourbon'
@@ -35,10 +35,10 @@ gem 'bitters'
 gem 'neat'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
@@ -54,10 +54,10 @@ gem 'jquery-turbolinks'
 gem 'slim-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder'
 
 # Use for mobile
-gem 'iphone_helpers', '~> 3.0.1'
+gem 'iphone_helpers'
 
 # User authorization
 gem 'devise'
@@ -86,7 +86,7 @@ group :development do
   gem 'i18n_generators'
 
   # Quiet Assets Log
-  gem 'quiet_assets', '~> 1.0.2'
+  gem 'quiet_assets'
 
   # Guard
   gem 'ruby_gntp'
@@ -119,7 +119,7 @@ group :development, :test do
 
   # Test Framework
   gem 'minitest-rails'
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'factory_girl_rails'
   gem 'webmock'
   gem 'database_cleaner'
 end
