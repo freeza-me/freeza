@@ -4,23 +4,10 @@ class FridgesController < ApplicationController
 
   before_action :set_fridge, only: [:show, :edit, :update, :destroy]
 
-  # GET /fridges
-  # GET /fridges.json
-  def index
-    @fridges = current_user.fridges
-    respond_with @fridges
-  end
-
-  # GET /fridges/1
-  # GET /fridges/1.json
-  def show
-    respond_with @fridge
-  end
 
   # GET /fridges/new
   def new
     @fridge = current_user.fridges.new
-    respond_with @fridge
   end
 
   # GET /fridges/1/edit
@@ -75,5 +62,9 @@ class FridgesController < ApplicationController
     raise unless data['event'] && data['event'] == 'inbound'
     raise unless data['msg'] && @inbound_msg = data['msg']
     raise unless (m = @inbound_msg['to'][0][0].match(/^fridge-(.*)@freeza.me$/))[0] && @inbound_token = m[1]
+  end
+
+  def interpolation_options
+    { resource_name: @fridge.name }
   end
 end

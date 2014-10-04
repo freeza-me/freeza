@@ -7,7 +7,6 @@ class FoodsController < ApplicationController
   # GET /foods/new
   def new
     @food = @fridge.foods.new
-    respond_with @food
   end
 
   # GET /foods/1/edit
@@ -49,5 +48,9 @@ class FoodsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
       params.require(:food).permit(:name, :deadline)
+    end
+
+    def interpolation_options
+      { resource_name: @food.name }
     end
 end

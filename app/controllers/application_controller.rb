@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  responders :location, :flash
+  responders :location, :flash, :http_cache
   respond_to :html, :json
 
   # Prevent CSRF attacks by raising an exception.
