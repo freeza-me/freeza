@@ -9,4 +9,5 @@ Freeza
 [![Build Status](https://travis-ci.org/freeza-me/freeza.png?branch=master)](https://travis-ci.org/freeza-me/freeza)
 [![Dependency Status](https://gemnasium.com/freeza-me/freeza.png)](https://gemnasium.com/freeza-me/freeza)
 [![Coverage Status](https://coveralls.io/repos/freeza-me/freeza/badge.png?branch=master)](https://coveralls.io/r/freeza-me/freeza?branch=master)
- [![Code Climate](https://codeclimate.com/github/freeza-me/freeza.png)](https://codeclimate.com/github/freeza-me/freeza)
+[![Test Coverage](https://codeclimate.com/github/freeza-me/freeza/badges/coverage.svg)](https://codeclimate.com/github/freeza-me/freeza)
+[![Code Climate](https://codeclimate.com/github/freeza-me/freeza.png)](https://codeclimate.com/github/freeza-me/freeza)
