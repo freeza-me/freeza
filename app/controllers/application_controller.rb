@@ -9,16 +9,10 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
 
   def set_locale
-    set_locale_safety extract_locale
+    I18n.locale = extract_locale
   end
 
   private
-
-  def set_locale_safety locale
-    if I18n.available_locales.map(&:to_s).include? locale.to_s
-      I18n.locale = locale.to_sym
-    end
-  end
 
   def extract_locale
     if current_user && current_user.locale
@@ -26,7 +20,7 @@ class ApplicationController < ActionController::Base
     elsif cookies[:locale]
       extract_locale_from_cookie
     else
-      extract_locale_from_accept_language
+      extract_locale_from_accept_language_header
     end
   end
 
