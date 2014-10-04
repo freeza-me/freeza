@@ -369,7 +369,7 @@ DEPENDENCIES
   binding_of_caller
   bitters
   bourbon
-  bundler
+  bundler (~> 1.7.3)
   coffee-rails
   colorize_unpermitted_parameters
   coveralls

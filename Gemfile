@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 
 # Bundler
-gem 'bundler'
+gem 'bundler', '~> 1.7.3'
 
 # Rake
 gem 'rake', require: false
