@@ -122,7 +122,7 @@ group :development, :test do
   # Test Framework
   gem 'minitest-rails'
   gem 'factory_girl_rails'
-  gem 'webmock'
+  # gem 'webmock'
   gem 'database_cleaner'
 end
 
