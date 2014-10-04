@@ -9,11 +9,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
 
   def set_locale
-    if cookies[:locale]
-      set_locale_from_cookie
-    else
-      set_locale_from_accept_language
-    end
+    set_locale_safety extract_locale
   end
 
   private
@@ -24,12 +20,18 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def set_locale_from_cookie
-    set_locale_safety cookies[:locale]
+  def extract_locale
+    if current_user && current_user.locale
+      current_user.locale
+    elsif cookies[:locale]
+      extract_locale_from_cookie
+    else
+      extract_locale_from_accept_language
+    end
   end
 
-  def set_locale_from_accept_language
-    set_locale_safety extract_locale_from_accept_language_header
+  def extract_locale_from_cookie
+    cookies[:locale]
   end
 
   def extract_locale_from_accept_language_header
