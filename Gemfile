@@ -56,6 +56,8 @@ gem 'slim-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
 
+gem 'responders'
+
 # Use for mobile
 gem 'iphone_helpers'
 

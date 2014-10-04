@@ -407,6 +407,7 @@ DEPENDENCIES
   rails-i18n
   rake
   redis-rails
+  responders
   rollbar
   ruby_gntp
   sass-rails (~> 4.0.3)
