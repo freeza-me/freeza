@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.2'
 
 # Bundler
 gem 'bundler', '~> 1.6.3'
@@ -12,7 +12,7 @@ gem 'rake', require: false
 gem 'dotenv-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '4.1.6'
 
 # Use i18n
 gem 'rails-i18n', '~> 4.0.0'
@@ -57,7 +57,7 @@ gem 'slim-rails'
 gem 'jbuilder', '~> 1.2'
 
 # Use for mobile
-gem 'iphone_helpers', '~> 3.0.0'
+gem 'iphone_helpers', '~> 3.0.1'
 
 # User authorization
 gem 'devise'
@@ -91,7 +91,7 @@ group :development do
   # Guard
   gem 'ruby_gntp'
   gem 'guard'
-  gem 'guard-unicorn', github: 'closer/guard-unicorn'
+  gem 'guard-unicorn'
   gem 'guard-livereload'
   gem 'guard-minitest'
 end
@@ -112,7 +112,6 @@ group :development, :test do
   # Browser Debugger
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'annotate', github: 'ctran/annotate_models'
   gem 'timecop'
   gem 'colorize_unpermitted_parameters'
   gem 'rack-mini-profiler'
@@ -120,7 +119,6 @@ group :development, :test do
 
   # Test Framework
   gem 'minitest-rails'
-  gem 'minitest-colorize'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'webmock'
   gem 'database_cleaner'
