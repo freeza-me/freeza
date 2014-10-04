@@ -8,7 +8,7 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
-# require "webmock/minitest"
+require "webmock/minitest"
 require 'database_cleaner'
 
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
@@ -17,6 +17,8 @@ require 'database_cleaner'
 
 # Uncomment for awesome colorful output
 # require "minitest/pride"
+
+WebMock.disable_net_connect!(:allow => "codeclimate.com")
 
 DatabaseCleaner.strategy = :truncation
 
