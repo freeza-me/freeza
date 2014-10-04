@@ -8,16 +8,19 @@ class FridgesController < ApplicationController
   # GET /fridges.json
   def index
     @fridges = current_user.fridges
+    respond_with @fridges
   end
 
   # GET /fridges/1
   # GET /fridges/1.json
   def show
+    respond_with @fridge
   end
 
   # GET /fridges/new
   def new
     @fridge = current_user.fridges.new
+    respond_with @fridge
   end
 
   # GET /fridges/1/edit
@@ -27,41 +30,22 @@ class FridgesController < ApplicationController
   # POST /fridges
   # POST /fridges.json
   def create
-    @fridge = current_user.fridges.new(fridge_params)
-
-    respond_to do |format|
-      if @fridge.save
-        format.html { redirect_to kitchen_board_path, notice: t('activerecord.flash.created', model: @fridge.name) }
-        format.json { render action: 'show', status: :created, location: kitchen_board_path }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @fridge.errors, status: :unprocessable_entity }
-      end
-    end
+    @fridge = current_user.fridges.create(fridge_params)
+    respond_with @fridge, location: -> { kitchen_board_path }
   end
 
   # PATCH/PUT /fridges/1
   # PATCH/PUT /fridges/1.json
   def update
-    respond_to do |format|
-      if @fridge.update(fridge_params)
-        format.html { redirect_to kitchen_board_path, notice: t('activerecord.flash.updated', model: @fridge.name) }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @fridge.errors, status: :unprocessable_entity }
-      end
-    end
+    @fridge.update(fridge_params)
+    respond_with @fridge, location: -> { kitchen_board_path }
   end
 
   # DELETE /fridges/1
   # DELETE /fridges/1.json
   def destroy
     @fridge.destroy
-    respond_to do |format|
-      format.html { redirect_to kitchen_board_path, notice: t('activerecord.flash.deleted', model: @fridge.name) }
-      format.json { head :no_content }
-    end
+    respond_with @fridge, location: -> { kitchen_board_path }
   end
 
   def inbound

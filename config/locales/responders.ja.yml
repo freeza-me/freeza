@@ -1,0 +1,12 @@
+ja:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name}を登録しました。"
+        alert: '%{resource_name}を登録できませんでした。'
+      update:
+        notice: "%{resource_name}の変更を保存しました。"
+        alert: '%{resource_name}を保存できませんでした。'
+      destroy:
+        notice: "%{resource_name}を削除しました。"
+        alert: "%{resource_name}を削除できませんでした。"

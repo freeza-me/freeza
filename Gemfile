@@ -56,15 +56,15 @@ gem 'slim-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
 
-gem 'responders'
-
 # Use for mobile
-gem 'iphone_helpers'
+gem 'iphone_helpers', '~> 3.0.0'
 
 # User authorization
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+
+gem 'responders'
 
 # Use for building examples
 gem 'factory_girl'

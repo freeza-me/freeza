@@ -388,7 +388,7 @@ DEPENDENCIES
   hirb
   hirb-unicode
   i18n_generators
-  iphone_helpers
+  iphone_helpers (~> 3.0.0)
   jbuilder
   jquery-rails
   jquery-turbolinks

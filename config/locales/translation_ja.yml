@@ -1,10 +1,5 @@
 ja:
   activerecord:
-    flash:
-      created: "%{model}を登録しました。"
-      updated: "%{model}の変更を保存しました。"
-      deleted: "%{model}を削除しました。"
-
     models:
       food: 食材
       fridge: 冷蔵庫
