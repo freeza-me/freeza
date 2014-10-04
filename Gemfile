@@ -128,3 +128,6 @@ end
 
 # Coveralls
 gem 'coveralls', require: false
+
+# Code Climate
+gem "codeclimate-test-reporter", group: :test, require: nil
