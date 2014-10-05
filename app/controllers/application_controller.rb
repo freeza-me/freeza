@@ -9,10 +9,16 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
 
   def set_locale
-    I18n.locale = extract_locale
+    set_locake_safety extract_locale
   end
 
   private
+
+  def set_locake_safety(locale)
+    if I18n.available_locales.include? locale.to_sym
+      I18n.locale = locale.to_sym
+    end
+  end
 
   def extract_locale
     if current_user && current_user.locale
