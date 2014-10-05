@@ -15,8 +15,9 @@ class ApplicationController < ActionController::Base
   private
 
   def set_locake_safety(locale)
-    if I18n.available_locales.include? locale.to_sym
-      I18n.locale = locale.to_sym
+    locale = :"#{locale}"
+    if I18n.available_locales.include? locale
+      I18n.locale = locale
     else
       I18n.locale = I18n.default_locale
     end
