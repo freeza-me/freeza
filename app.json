@@ -1,0 +1,50 @@
+{
+  "name": "freeza",
+  "scripts": {
+  },
+  "env": {
+    "ASSET_SYNC_EXISTING_REMOTE_FILES": {
+      "required": true
+    },
+    "ASSET_SYNC_GZIP_COMPRESSION": {
+      "required": true
+    },
+    "ASSET_SYNC_MANIFEST": {
+      "required": true
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "DATABASE_URL": {
+      "required": true
+    },
+    "FOG_DIRECTORY": {
+      "required": true
+    },
+    "FOG_PROVIDER": {
+      "required": true
+    },
+    "FOG_REGION": {
+      "required": true
+    },
+    "NEW_RELIC_APP_NAME": {
+      "required": true
+    },
+    "REDIS_URL": {
+      "required": true
+    }
+  },
+  "addons": [
+    "cleardb",
+    "papertrail",
+    "rollbar",
+    "mandrill",
+    "treasure-data",
+    "bugsnag",
+    "rediscloud",
+    "newrelic"
+  ]
+}
